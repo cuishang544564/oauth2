@@ -1,11 +1,14 @@
 package com.rui.tiger.auth.core.captcha;
 
+import com.rui.tiger.auth.core.properties.SecurityProperties;
 import lombok.Getter;
 import lombok.Setter;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.social.connect.web.HttpSessionSessionStrategy;
 import org.springframework.social.connect.web.SessionStrategy;
+import org.springframework.util.AntPathMatcher;
 import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.context.request.ServletWebRequest;
@@ -16,6 +19,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * 图片验证码过滤器
@@ -24,27 +31,60 @@ import java.io.IOException;
  * @author CaiRui
  * @date 2018-12-10 12:23
  */
-public class CaptchaFilter extends OncePerRequestFilter {
+@Setter
+@Getter
+public class CaptchaFilter extends OncePerRequestFilter implements InitializingBean {
 
 	//一般在配置类中进行注入
-	@Setter
-	@Getter
+
 	private AuthenticationFailureHandler failureHandler;
 
+	private SecurityProperties securityProperties;
+
+	/**
+	 * 验证码拦截的路径
+	 */
+	private Set<String> interceptUrlSet=new HashSet<>();
+
+    //session工具类
 	private SessionStrategy sessionStrategy = new HttpSessionSessionStrategy();
+	//路径匹配工具类
+	private AntPathMatcher antPathMatcher=new AntPathMatcher();
+
+	/**
+	 *
+	 * @throws ServletException
+	 */
+
+	@Override
+	public void afterPropertiesSet() throws ServletException {
+		super.afterPropertiesSet();
+		//其它配置的需要验证码验证的路径
+		String configInterceptUrl=securityProperties.getImageCaptcha().getInterceptImageUrl();
+		if(StringUtils.isNotBlank(configInterceptUrl)){
+			String[] configInterceptUrlArray=StringUtils.split(configInterceptUrl,",");
+			interceptUrlSet= Stream.of(configInterceptUrlArray).collect(Collectors.toSet());
+		}
+		//登录请求验证
+		interceptUrlSet.add("/authentication/form");
+	}
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
+
+
+
+		//表单登录的post请求
 		if (StringUtils.equals("/authentication/form", request.getRequestURI())
 				&& StringUtils.equalsIgnoreCase("post", request.getMethod())) {
 			try {
 				validate(request);
-			}catch (CaptchaException captchaException ){
+			} catch (CaptchaException captchaException) {
+				//失败调用我们的自定义失败处理器
 				failureHandler.onAuthenticationFailure(request, response, captchaException);
 				//后续流程终止
 				return;
 			}
-
 		}
 		filterChain.doFilter(request, response);
 
@@ -52,6 +92,7 @@ public class CaptchaFilter extends OncePerRequestFilter {
 
 	/**
 	 * 图片验证码校验
+	 *
 	 * @param request
 	 */
 	private void validate(HttpServletRequest request) throws ServletRequestBindingException {

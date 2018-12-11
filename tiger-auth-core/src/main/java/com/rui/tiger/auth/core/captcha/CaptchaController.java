@@ -20,12 +20,12 @@ import java.io.IOException;
 @RestController
 public class CaptchaController {
 
-	public static final String IMAGE_CAPTCHA_SESSION_KEY="image_captcha_key";
+	public static final String IMAGE_CAPTCHA_SESSION_KEY="image_captcha_session_key";
 	private static final String FORMAT_NAME="JPEG";
 
 	@Autowired
 	private CaptchaGenerate captchaGenerate;
-
+    //spring session 工具类
 	private SessionStrategy sessionStrategy=new HttpSessionSessionStrategy();
 
 	/**
