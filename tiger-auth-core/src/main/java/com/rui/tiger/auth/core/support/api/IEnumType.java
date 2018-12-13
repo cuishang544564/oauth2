@@ -5,10 +5,10 @@ package com.rui.tiger.auth.core.support.api;
  * 蔡锐 2015年11月20日
  */
 public interface IEnumType {
-    /**
-     * 获取枚举类型名称
-     *
-     * @return String
-     */
-    String getEnumName();
+	/**
+	 * 获取枚举类型名称
+	 *
+	 * @return String
+	 */
+	String getEnumName();
 }

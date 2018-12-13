@@ -20,29 +20,29 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class MyUserDetailServiceImpl implements UserDetailsService {
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
-    /**
-     * @param username
-     * @return
-     * @throws UsernameNotFoundException
-     */
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        //TODO 后续做成数据库实现（MyBaites-plus实现）先实现流程
-        //1.根据用户名去数据库去查询用户信息获取加密后的密码 这里模拟一个加密的数据库密码
-        String encryptedPassWord = passwordEncoder.encode("123456");
-        log.info("模拟加密后的数据库密码:{}", encryptedPassWord);
-        //2.这里可以去验证账户的其它相关信息 默认都通过
+	/**
+	 * @param username
+	 * @return
+	 * @throws UsernameNotFoundException
+	 */
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		//TODO 后续做成数据库实现（MyBaites-plus实现）先实现流程
+		//1.根据用户名去数据库去查询用户信息获取加密后的密码 这里模拟一个加密的数据库密码
+		String encryptedPassWord = passwordEncoder.encode("123456");
+		log.info("模拟加密后的数据库密码:{}", encryptedPassWord);
+		//2.这里可以去验证账户的其它相关信息 默认都通过
 
-        //3.返回认证过的用户信息  授予一个admin的权限
-        return new User(username,
-                encryptedPassWord,
-                true,
-                true,
-                true,
-                true,
-                AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
-    }
+		//3.返回认证过的用户信息  授予一个admin的权限
+		return new User(username,
+				encryptedPassWord,
+				true,
+				true,
+				true,
+				true,
+				AuthorityUtils.commaSeparatedStringToAuthorityList("admin"));
+	}
 }

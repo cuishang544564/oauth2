@@ -3,6 +3,7 @@ package com.rui.tiger.auth.core.captcha;
 import com.rui.tiger.auth.core.properties.SecurityProperties;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
@@ -33,6 +34,7 @@ import java.util.stream.Stream;
  */
 @Setter
 @Getter
+@Slf4j
 public class CaptchaFilter extends OncePerRequestFilter implements InitializingBean {
 
 	//一般在配置类中进行注入
@@ -44,15 +46,14 @@ public class CaptchaFilter extends OncePerRequestFilter implements InitializingB
 	/**
 	 * 验证码拦截的路径
 	 */
-	private Set<String> interceptUrlSet=new HashSet<>();
+	private Set<String> interceptUrlSet = new HashSet<>();
 
-    //session工具类
+	//session工具类
 	private SessionStrategy sessionStrategy = new HttpSessionSessionStrategy();
 	//路径匹配工具类
-	private AntPathMatcher antPathMatcher=new AntPathMatcher();
+	private AntPathMatcher antPathMatcher = new AntPathMatcher();
 
 	/**
-	 *
 	 * @throws ServletException
 	 */
 
@@ -60,10 +61,10 @@ public class CaptchaFilter extends OncePerRequestFilter implements InitializingB
 	public void afterPropertiesSet() throws ServletException {
 		super.afterPropertiesSet();
 		//其它配置的需要验证码验证的路径
-		String configInterceptUrl=securityProperties.getImageCaptcha().getInterceptImageUrl();
-		if(StringUtils.isNotBlank(configInterceptUrl)){
-			String[] configInterceptUrlArray=StringUtils.split(configInterceptUrl,",");
-			interceptUrlSet= Stream.of(configInterceptUrlArray).collect(Collectors.toSet());
+		String configInterceptUrl = securityProperties.getImageCaptcha().getInterceptImageUrl();
+		if (StringUtils.isNotBlank(configInterceptUrl)) {
+			String[] configInterceptUrlArray = StringUtils.split(configInterceptUrl, ",");
+			interceptUrlSet = Stream.of(configInterceptUrlArray).collect(Collectors.toSet());
 		}
 		//登录请求验证
 		interceptUrlSet.add("/authentication/form");
@@ -72,11 +73,14 @@ public class CaptchaFilter extends OncePerRequestFilter implements InitializingB
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
-
-
-		//表单登录的post请求
-		if (StringUtils.equals("/authentication/form", request.getRequestURI())
-				&& StringUtils.equalsIgnoreCase("post", request.getMethod())) {
+		log.info("验证码验证请求路径:[{}]", request.getRequestURI());
+		boolean action = false;// 默认不放行
+		for (String url : interceptUrlSet) {
+			if (antPathMatcher.match(url, request.getRequestURI())) {
+				action = true;
+			}
+		}
+		if (action) {
 			try {
 				validate(request);
 			} catch (CaptchaException captchaException) {
@@ -85,9 +89,10 @@ public class CaptchaFilter extends OncePerRequestFilter implements InitializingB
 				//后续流程终止
 				return;
 			}
-		}
-		filterChain.doFilter(request, response);
 
+		}
+		//后续过滤器继续执行
+		filterChain.doFilter(request, response);
 	}
 
 	/**

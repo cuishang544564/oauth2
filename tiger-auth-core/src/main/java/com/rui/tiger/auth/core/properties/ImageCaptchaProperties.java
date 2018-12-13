@@ -2,21 +2,21 @@ package com.rui.tiger.auth.core.properties;
 
 /**
  * 图片验证码配置类,根据情况添加具体配置项
- * 其它详细配置参见
- * @see com.google.code.kaptcha.Constants
+ *
  * @author CaiRui
  * @date 2018-12-11 9:02
+ * @see com.google.code.kaptcha.Constants
  */
 public class ImageCaptchaProperties {
 
 	/**
-	 * 长度
+	 * 验证码长度
 	 */
-	private int size=4;
+	private int size = 4;
 
 	/**
 	 * 宽度
- 	 */
+	 */
 	private int width;
 	/**
 	 * 高度
@@ -25,7 +25,7 @@ public class ImageCaptchaProperties {
 	/**
 	 * 失效秒数
 	 */
-	private int expireAfterSecondes=3*60;//默认三分钟
+	private int expireAfterSecondes = 3 * 60;//默认三分钟
 	/**
 	 * 验证码拦截的路径 多个路径以,(逗号)进行分割
 	 */

@@ -4,6 +4,7 @@ import org.springframework.security.core.AuthenticationException;
 
 /**
  * 自定义验证码异常
+ *
  * @author CaiRui
  * @date 2018-12-10 12:43
  */

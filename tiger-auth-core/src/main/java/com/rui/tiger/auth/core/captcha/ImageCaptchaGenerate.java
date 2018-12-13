@@ -12,7 +12,8 @@ import java.awt.image.BufferedImage;
  * @author CaiRui
  * @date 2018-12-10 12:07
  */
-@Service("imageCaptchaGenerate")
+//@Service("imageCaptchaGenerate")
+
 public class ImageCaptchaGenerate implements CaptchaGenerate {
 
 	@Autowired
