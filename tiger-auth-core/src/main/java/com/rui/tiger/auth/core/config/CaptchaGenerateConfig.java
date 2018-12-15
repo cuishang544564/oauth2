@@ -32,7 +32,7 @@ public class CaptchaGenerateConfig {
 		properties.put(Constants.KAPTCHA_TEXTPRODUCER_FONT_COLOR, "black");
 		//验证码长度 put 不生效  注意
 		//properties.put("kaptcha.textproducer.char.length", securityProperties.getImageCaptcha().getSize());
-		properties.setProperty("kaptcha.textproducer.char.length", String.valueOf(securityProperties.getImageCaptcha().getSize()));
+		properties.setProperty("kaptcha.textproducer.char.length", String.valueOf(securityProperties.getCaptcha().getImage().getSize()));
 
 		Config config = new Config(properties);
 		DefaultKaptcha defaultKaptcha = new DefaultKaptcha();

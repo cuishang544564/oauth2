@@ -1,6 +1,8 @@
-package com.rui.tiger.auth.core.captcha;
+package com.rui.tiger.auth.core.captcha.image;
 
 import com.google.code.kaptcha.Producer;
+import com.rui.tiger.auth.core.captcha.CaptchaGenerate;
+import com.rui.tiger.auth.core.captcha.ImageCaptchaVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -88,7 +88,7 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 				.authorizeRequests()
 				.antMatchers(securityProperties.getBrowser().getLoginPage(),
-						"/authentication/require", "/captcha/image")//此路径放行 否则会陷入死循环
+						"/authentication/require", "/captcha/*")//此路径放行 否则会陷入死循环
 				.permitAll()
 				.anyRequest()
 				.authenticated()

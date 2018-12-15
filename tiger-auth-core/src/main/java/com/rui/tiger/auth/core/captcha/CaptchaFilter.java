@@ -61,7 +61,7 @@ public class CaptchaFilter extends OncePerRequestFilter implements InitializingB
 	public void afterPropertiesSet() throws ServletException {
 		super.afterPropertiesSet();
 		//其它配置的需要验证码验证的路径
-		String configInterceptUrl = securityProperties.getImageCaptcha().getInterceptImageUrl();
+		String configInterceptUrl = securityProperties.getCaptcha().getImage().getInterceptImageUrl();
 		if (StringUtils.isNotBlank(configInterceptUrl)) {
 			String[] configInterceptUrlArray = StringUtils.split(configInterceptUrl, ",");
 			interceptUrlSet = Stream.of(configInterceptUrlArray).collect(Collectors.toSet());
@@ -103,7 +103,8 @@ public class CaptchaFilter extends OncePerRequestFilter implements InitializingB
 	private void validate(HttpServletRequest request) throws ServletRequestBindingException {
 		// 拿到之前存储的imageCode信息
 		ServletWebRequest swr = new ServletWebRequest(request);
-		ImageCaptchaVo imageCodeInSession = (ImageCaptchaVo) sessionStrategy.getAttribute(swr, CaptchaController.IMAGE_CAPTCHA_SESSION_KEY);
+		//ImageCaptchaVo imageCodeInSession = (ImageCaptchaVo) sessionStrategy.getAttribute(swr, CaptchaController.CAPTCHA_SESSION_KEY);
+		ImageCaptchaVo imageCodeInSession = (ImageCaptchaVo) sessionStrategy.getAttribute(swr, CaptchaProcessor.CAPTCHA_SESSION_KEY+"image");
 		String codeInRequest = ServletRequestUtils.getStringParameter(request, "imageCode");
 
 		if (StringUtils.isBlank(codeInRequest)) {
@@ -113,13 +114,13 @@ public class CaptchaFilter extends OncePerRequestFilter implements InitializingB
 			throw new CaptchaException("验证码不存在");
 		}
 		if (imageCodeInSession.isExpried()) {
-			sessionStrategy.removeAttribute(swr, CaptchaController.IMAGE_CAPTCHA_SESSION_KEY);
+			sessionStrategy.removeAttribute(swr, CaptchaController.CAPTCHA_SESSION_KEY);
 			throw new CaptchaException("验证码已过期");
 		}
 		if (!StringUtils.equals(imageCodeInSession.getCode(), codeInRequest)) {
 			throw new CaptchaException("验证码不匹配");
 		}
 		//验证通过 移除缓存
-		sessionStrategy.removeAttribute(swr, CaptchaController.IMAGE_CAPTCHA_SESSION_KEY);
+		sessionStrategy.removeAttribute(swr, CaptchaController.CAPTCHA_SESSION_KEY);
 	}
 }

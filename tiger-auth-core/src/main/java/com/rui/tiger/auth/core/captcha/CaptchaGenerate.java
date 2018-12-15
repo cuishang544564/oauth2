@@ -8,9 +8,9 @@ package com.rui.tiger.auth.core.captcha;
  */
 public interface CaptchaGenerate {
 	/**
-	 * 生成图片验证码
+	 * 生成验证码
 	 *
 	 * @return
 	 */
-	ImageCaptchaVo generate();
+	CaptchaVo generate();
 }

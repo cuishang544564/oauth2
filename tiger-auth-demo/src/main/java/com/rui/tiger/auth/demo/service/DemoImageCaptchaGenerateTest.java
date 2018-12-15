@@ -3,7 +3,6 @@ package com.rui.tiger.auth.demo.service;
 import com.rui.tiger.auth.core.captcha.CaptchaGenerate;
 import com.rui.tiger.auth.core.captcha.ImageCaptchaVo;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 
 /**
  * @author CaiRui
@@ -17,7 +16,7 @@ public class DemoImageCaptchaGenerateTest implements CaptchaGenerate {
 	 * 测试覆盖 测试通过将其@Component去掉 保证正常流程执行
 	 *
 	 * @return
-	 * @see com.rui.tiger.auth.core.config.CaptchaGenerateBeanConfig
+	 * @see com.rui.tiger.auth.core.config.CaptchaBeanConfig
 	 */
 	@Override
 	public ImageCaptchaVo generate() {
