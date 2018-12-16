@@ -1,5 +1,9 @@
-package com.rui.tiger.auth.core.captcha;
+package com.rui.tiger.auth.core.captcha.sms;
 
+import com.rui.tiger.auth.core.captcha.CaptchaException;
+import com.rui.tiger.auth.core.captcha.CaptchaProcessor;
+import com.rui.tiger.auth.core.captcha.CaptchaVo;
+import com.rui.tiger.auth.core.captcha.ImageCaptchaVo;
 import com.rui.tiger.auth.core.properties.SecurityProperties;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,7 +30,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * 图片验证码过滤器
+ *  手机验证码过滤器
  * OncePerRequestFilter 过滤器只会调用一次
  *
  * @author CaiRui
@@ -35,7 +39,7 @@ import java.util.stream.Stream;
 @Setter
 @Getter
 @Slf4j
-public class CaptchaFilter extends OncePerRequestFilter implements InitializingBean {
+public class SmsCaptchaFilter extends OncePerRequestFilter implements InitializingBean {
 
 	//一般在配置类中进行注入
 
@@ -61,13 +65,13 @@ public class CaptchaFilter extends OncePerRequestFilter implements InitializingB
 	public void afterPropertiesSet() throws ServletException {
 		super.afterPropertiesSet();
 		//其它配置的需要验证码验证的路径
-		String configInterceptUrl = securityProperties.getCaptcha().getImage().getInterceptImageUrl();
+		String configInterceptUrl = securityProperties.getCaptcha().getSms().getInterceptUrl();
 		if (StringUtils.isNotBlank(configInterceptUrl)) {
 			String[] configInterceptUrlArray = StringUtils.split(configInterceptUrl, ",");
 			interceptUrlSet = Stream.of(configInterceptUrlArray).collect(Collectors.toSet());
 		}
-		//登录请求验证
-		interceptUrlSet.add("/authentication/form");
+		//短信登录请求验证
+		interceptUrlSet.add("/authentication/mobile");
 	}
 
 	@Override
@@ -101,27 +105,26 @@ public class CaptchaFilter extends OncePerRequestFilter implements InitializingB
 	 * @param request
 	 */
 	private void validate(HttpServletRequest request) throws ServletRequestBindingException {
-		String imageSessionKey=CaptchaProcessor.CAPTCHA_SESSION_KEY+"image";
+		String smsSessionKey=CaptchaProcessor.CAPTCHA_SESSION_KEY+"sms";
 		// 拿到之前存储的imageCode信息
 		ServletWebRequest swr = new ServletWebRequest(request);
-		//ImageCaptchaVo imageCodeInSession = (ImageCaptchaVo) sessionStrategy.getAttribute(swr, CaptchaController.CAPTCHA_SESSION_KEY);
-		ImageCaptchaVo imageCodeInSession = (ImageCaptchaVo) sessionStrategy.getAttribute(swr, CaptchaProcessor.CAPTCHA_SESSION_KEY+"image");
-		String codeInRequest = ServletRequestUtils.getStringParameter(request, "imageCode");
+		CaptchaVo smsCaptchaInSession = (CaptchaVo) sessionStrategy.getAttribute(swr, smsSessionKey);
+		String codeInRequest = ServletRequestUtils.getStringParameter(request, "smsCode");
 
 		if (StringUtils.isBlank(codeInRequest)) {
 			throw new CaptchaException("验证码的值不能为空");
 		}
-		if (imageCodeInSession == null) {
+		if (smsCaptchaInSession == null) {
 			throw new CaptchaException("验证码不存在");
 		}
-		if (imageCodeInSession.isExpried()) {
-			sessionStrategy.removeAttribute(swr, imageSessionKey);
+		if (smsCaptchaInSession.isExpried()) {
+			sessionStrategy.removeAttribute(swr, smsSessionKey);
 			throw new CaptchaException("验证码已过期");
 		}
-		if (!StringUtils.equals(imageCodeInSession.getCode(), codeInRequest)) {
+		if (!StringUtils.equals(smsCaptchaInSession.getCode(), codeInRequest)) {
 			throw new CaptchaException("验证码不匹配");
 		}
 		//验证通过 移除缓存
-		sessionStrategy.removeAttribute(swr, imageSessionKey);
+		sessionStrategy.removeAttribute(swr, smsSessionKey);
 	}
 }

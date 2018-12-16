@@ -15,6 +15,13 @@ public class SmsCaptchaProperties {
      */
     private int expireSeconds=180;
 
+    /**
+     * 短信验证码拦截的路径 多个路径以,(逗号)进行分割
+     */
+    private String interceptUrl;
+
+
+
     public int getLength() {
         return length;
     }
@@ -31,4 +38,11 @@ public class SmsCaptchaProperties {
         this.expireSeconds = expireSeconds;
     }
 
+    public String getInterceptUrl() {
+        return interceptUrl;
+    }
+
+    public void setInterceptUrl(String interceptUrl) {
+        this.interceptUrl = interceptUrl;
+    }
 }

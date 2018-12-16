@@ -2,7 +2,9 @@ package com.rui.tiger.auth.browser.config;
 
 import com.rui.tiger.auth.core.authentication.TigerAuthenticationFailureHandler;
 import com.rui.tiger.auth.core.authentication.TigerAuthenticationSuccessHandler;
+import com.rui.tiger.auth.core.authentication.mobile.SmsAuthenticationSecurityConfig;
 import com.rui.tiger.auth.core.captcha.CaptchaFilter;
+import com.rui.tiger.auth.core.captcha.sms.SmsCaptchaFilter;
 import com.rui.tiger.auth.core.properties.SecurityProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -37,6 +39,8 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
 	private DataSource dataSource;
 	@Autowired
 	private UserDetailsService userDetailsService;
+	@Autowired
+	private SmsAuthenticationSecurityConfig smsAuthenticationSecurityConfig;//短信登陆配置
 
 	/**
 	 * 密码加密解密
@@ -71,9 +75,15 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
 		captchaFilter.setFailureHandler(tigerAuthenticationFailureHandler);
 		captchaFilter.setSecurityProperties(securityProperties);
 		captchaFilter.afterPropertiesSet();
+		//短信验证码的配置
+		SmsCaptchaFilter smsCaptchaFilter = new SmsCaptchaFilter();
+		smsCaptchaFilter.setFailureHandler(tigerAuthenticationFailureHandler);
+		smsCaptchaFilter.setSecurityProperties(securityProperties);
+		smsCaptchaFilter.afterPropertiesSet();
 
-		//图片验证码放在认证之前
-		http.addFilterBefore(captchaFilter, UsernamePasswordAuthenticationFilter.class)
+		//将验证码的过滤器放在登陆的前面
+		http.addFilterBefore(smsCaptchaFilter,UsernamePasswordAuthenticationFilter.class)
+				.addFilterBefore(captchaFilter, UsernamePasswordAuthenticationFilter.class)
 				.formLogin()
 				.loginPage("/authentication/require")//自定义登录请求
 				.loginProcessingUrl("/authentication/form")//自定义登录表单请求
@@ -94,6 +104,8 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
 				.authenticated()
 				.and()
 				.csrf().disable()//跨域关闭
+				//短信登陆配置挂载
+				.apply(smsAuthenticationSecurityConfig)
 		;
 	}
 
