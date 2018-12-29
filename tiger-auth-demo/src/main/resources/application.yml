@@ -22,4 +22,4 @@ tiger:
        #loginPage: /demo-login.html # 这里可以配置成自己的非标准登录界面
         loginType: JSON
      imageCaptcha:
-        #interceptImageUrl: /user/*,/pay/confirm # 这些路径验证码也要拦截校验
+        interceptImageUrl: /user/*,/pay/confirm # 这些路径验证码也要拦截校验

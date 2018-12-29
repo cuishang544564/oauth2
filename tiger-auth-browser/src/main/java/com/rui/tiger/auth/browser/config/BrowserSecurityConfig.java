@@ -1,20 +1,17 @@
 package com.rui.tiger.auth.browser.config;
 
-import com.rui.tiger.auth.core.authentication.TigerAuthenticationFailureHandler;
-import com.rui.tiger.auth.core.authentication.TigerAuthenticationSuccessHandler;
-import com.rui.tiger.auth.core.authentication.mobile.SmsAuthenticationSecurityConfig;
-import com.rui.tiger.auth.core.captcha.CaptchaFilter;
-import com.rui.tiger.auth.core.captcha.sms.SmsCaptchaFilter;
+import com.rui.tiger.auth.core.config.AbstractChannelSecurityConfig;
+import com.rui.tiger.auth.core.config.CaptchaSecurityConfig;
+import com.rui.tiger.auth.core.config.SmsAuthenticationSecurityConfig;
+import com.rui.tiger.auth.core.properties.SecurityConstants;
 import com.rui.tiger.auth.core.properties.SecurityProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
@@ -27,20 +24,18 @@ import javax.sql.DataSource;
  * @date 2018-12-4 8:41
  */
 @Configuration
-public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
+public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 
 	@Autowired
 	private SecurityProperties securityProperties;
-	@Autowired
-	private TigerAuthenticationFailureHandler tigerAuthenticationFailureHandler;
-	@Autowired
-	private TigerAuthenticationSuccessHandler tigerAuthenticationSuccessHandler;
 	@Autowired
 	private DataSource dataSource;
 	@Autowired
 	private UserDetailsService userDetailsService;
 	@Autowired
 	private SmsAuthenticationSecurityConfig smsAuthenticationSecurityConfig;//短信登陆配置
+	@Autowired
+	private CaptchaSecurityConfig captchaSecurityConfig;//验证码配置
 
 	/**
 	 * 密码加密解密
@@ -67,46 +62,40 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
 		return jdbcTokenRepository;
 	}
 
-
+	/**
+	 * 核心配置
+	 * @param http
+	 * @throws Exception
+	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		//加入图片验证码过滤器
-		CaptchaFilter captchaFilter = new CaptchaFilter();
-		captchaFilter.setFailureHandler(tigerAuthenticationFailureHandler);
-		captchaFilter.setSecurityProperties(securityProperties);
-		captchaFilter.afterPropertiesSet();
-		//短信验证码的配置
-		SmsCaptchaFilter smsCaptchaFilter = new SmsCaptchaFilter();
-		smsCaptchaFilter.setFailureHandler(tigerAuthenticationFailureHandler);
-		smsCaptchaFilter.setSecurityProperties(securityProperties);
-		smsCaptchaFilter.afterPropertiesSet();
+		/**
+		 * 表单密码配置
+		 */
+		applyPasswordAuthenticationConfig(http);
 
-		//将验证码的过滤器放在登陆的前面
-		http.addFilterBefore(smsCaptchaFilter,UsernamePasswordAuthenticationFilter.class)
-				.addFilterBefore(captchaFilter, UsernamePasswordAuthenticationFilter.class)
-				.formLogin()
-				.loginPage("/authentication/require")//自定义登录请求
-				.loginProcessingUrl("/authentication/form")//自定义登录表单请求
-				.successHandler(tigerAuthenticationSuccessHandler)
-				.failureHandler(tigerAuthenticationFailureHandler)
+		http
+				.apply(captchaSecurityConfig)
 				.and()
-				//记住我相关配置
+				.apply(smsAuthenticationSecurityConfig)
+				.and()
 				.rememberMe()
 				.tokenRepository(persistentTokenRepository())
 				.tokenValiditySeconds(securityProperties.getBrowser().getRemberMeSeconds())
 				.userDetailsService(userDetailsService)
 				.and()
 				.authorizeRequests()
-				.antMatchers(securityProperties.getBrowser().getLoginPage(),
-						"/authentication/require", "/captcha/*")//此路径放行 否则会陷入死循环
+				.antMatchers(
+						SecurityConstants.DEFAULT_UNAUTHENTICATION_URL,//权限认证
+						SecurityConstants.DEFAULT_LOGIN_PROCESSING_URL_MOBILE,//手机
+						securityProperties.getBrowser().getLoginPage(),//登录页面
+						SecurityConstants.DEFAULT_VALIDATE_CODE_URL_PREFIX+"/*")// /captcha/* 验证码放行
 				.permitAll()
 				.anyRequest()
 				.authenticated()
 				.and()
-				.csrf().disable()//跨域关闭
-				//短信登陆配置挂载
-				.apply(smsAuthenticationSecurityConfig)
-		;
+				.csrf().disable();
+
 	}
 
 }

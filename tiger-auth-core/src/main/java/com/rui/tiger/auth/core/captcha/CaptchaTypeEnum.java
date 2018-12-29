@@ -1,5 +1,7 @@
 package com.rui.tiger.auth.core.captcha;
 
+import com.rui.tiger.auth.core.properties.SecurityConstants;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,8 +12,18 @@ import java.util.Map;
  */
 public enum CaptchaTypeEnum {
 
-    SMS("sms","短信"),
-    IMAGE("image","图形验证码");
+    SMS("sms","短信验证码") {
+        @Override
+        public String getParamNameOnValidate() {
+            return SecurityConstants.DEFAULT_PARAMETER_NAME_CODE_SMS;
+        }
+    },
+    IMAGE("image","图形验证码") {
+        @Override
+        public String getParamNameOnValidate() {
+            return SecurityConstants.DEFAULT_PARAMETER_NAME_CODE_IMAGE;
+        }
+    };
 
     CaptchaTypeEnum(String code, String desc) {
         this.code = code;
@@ -37,8 +49,20 @@ public enum CaptchaTypeEnum {
         return codeLookup.get(code);
     }
 
+    /**
+     * 获取验证码请求中的参数
+     * @return
+     */
+    public abstract String getParamNameOnValidate();
+
+
     public String getCode() {
         return code;
     }
+
+    public String getDesc() {
+        return desc;
+    }
+
 
 }

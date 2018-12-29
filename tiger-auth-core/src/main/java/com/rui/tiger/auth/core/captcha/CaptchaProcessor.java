@@ -10,7 +10,7 @@ import org.springframework.web.context.request.ServletWebRequest;
  */
 public interface CaptchaProcessor extends IStrategy<CaptchaTypeEnum> {
     /**
-     * 验证码
+     * 验证码缓存KEY值前缀
      */
     String CAPTCHA_SESSION_KEY="captcha_session_key_";
     /**
@@ -19,4 +19,11 @@ public interface CaptchaProcessor extends IStrategy<CaptchaTypeEnum> {
      * @throws Exception
      */
     void create(ServletWebRequest request) throws  Exception;
+
+    /**
+     * 校验验证码
+     * @param servletWebRequest
+     * @param captchaTypeEnum
+     */
+    void  validate(ServletWebRequest servletWebRequest, CaptchaTypeEnum captchaTypeEnum) throws CaptchaException ;
 }

@@ -1,5 +1,7 @@
-package com.rui.tiger.auth.core.authentication.mobile;
+package com.rui.tiger.auth.core.config;
 
+import com.rui.tiger.auth.core.authentication.mobile.SmsAuthenticationFilter;
+import com.rui.tiger.auth.core.authentication.mobile.SmsAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
@@ -12,7 +14,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.stereotype.Component;
 
 /**
- * 手机权限配置类
+ * 浏览器和手机都需要认证
  * @author CaiRui
  * @Date 2018/12/16 13:42
  */
