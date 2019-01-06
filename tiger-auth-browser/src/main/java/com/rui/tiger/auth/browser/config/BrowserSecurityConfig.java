@@ -14,6 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+import org.springframework.social.security.SpringSocialConfigurer;
 
 import javax.sql.DataSource;
 
@@ -36,6 +37,8 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 	private SmsAuthenticationSecurityConfig smsAuthenticationSecurityConfig;//短信登陆配置
 	@Autowired
 	private CaptchaSecurityConfig captchaSecurityConfig;//验证码配置
+	@Autowired
+	private SpringSocialConfigurer tigerSpringSocialConfigurer;
 
 	/**
 	 * 密码加密解密
@@ -76,14 +79,16 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 
 		http
 				.apply(captchaSecurityConfig)
-				.and()
+					.and()
 				.apply(smsAuthenticationSecurityConfig)
-				.and()
+					.and()
+				.apply(tigerSpringSocialConfigurer)
+					.and()
 				.rememberMe()
 				.tokenRepository(persistentTokenRepository())
 				.tokenValiditySeconds(securityProperties.getBrowser().getRemberMeSeconds())
 				.userDetailsService(userDetailsService)
-				.and()
+					.and()
 				.authorizeRequests()
 				.antMatchers(
 						SecurityConstants.DEFAULT_UNAUTHENTICATION_URL,//权限认证
@@ -93,7 +98,7 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 				.permitAll()
 				.anyRequest()
 				.authenticated()
-				.and()
+					.and()
 				.csrf().disable();
 
 	}

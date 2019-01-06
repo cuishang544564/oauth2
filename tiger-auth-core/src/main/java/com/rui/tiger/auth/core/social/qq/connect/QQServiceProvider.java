@@ -26,7 +26,7 @@ public class QQServiceProvider extends AbstractOAuth2ServiceProvider<QQApi> {
 	 */
 	public QQServiceProvider(String appId,String secret) {
 		// OAuth2Operations 有一个默认实现类，可以使用这个默认实现类
-		super(new OAuth2Template(appId, secret, URL_AUTHORIZE , URL_ACCESS_TOKEN ));
+		super(new QQOAuth2Template(appId, secret, URL_AUTHORIZE , URL_ACCESS_TOKEN ));
 		this.appId=appId;
 	}
 

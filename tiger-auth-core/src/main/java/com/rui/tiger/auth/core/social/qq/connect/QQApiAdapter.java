@@ -7,6 +7,8 @@ import org.springframework.social.connect.ConnectionValues;
 import org.springframework.social.connect.UserProfile;
 
 /**
+ * 适配器，用于将不同服务提供商的个性化用户信息映射到
+ * {@link org.springframework.social.connect.Connection}
  * @author CaiRui
  * @date 2019-1-3 9:10
  */

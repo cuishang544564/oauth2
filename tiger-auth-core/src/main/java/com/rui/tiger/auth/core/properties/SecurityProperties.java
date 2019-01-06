@@ -21,6 +21,12 @@ public class SecurityProperties {
      */
     private CaptchaProperties captcha = new CaptchaProperties();
 
+    /**
+     * 社交配置类
+     */
+    private SocialProperties social=new SocialProperties();
+
+
     public BrowserProperties getBrowser() {
         return browser;
     }
@@ -35,5 +41,13 @@ public class SecurityProperties {
 
     public void setCaptcha(CaptchaProperties captcha) {
         this.captcha = captcha;
+    }
+
+    public SocialProperties getSocial() {
+        return social;
+    }
+
+    public void setSocial(SocialProperties social) {
+        this.social = social;
     }
 }

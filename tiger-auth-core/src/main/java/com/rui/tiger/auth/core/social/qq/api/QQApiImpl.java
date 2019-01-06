@@ -42,9 +42,10 @@ public class QQApiImpl extends AbstractOAuth2ApiBinding implements QQApi {
 		String openIdUrl=String.format(URL_GET_OPENID,accessToken);
 		String result=getRestTemplate().getForObject(openIdUrl,String.class);
 		//callback( {"client_id":"YOUR_APPID","openid":"YOUR_OPENID"} );
-		log.info("qq openID callback:{}",result);
+		log.info("qq openID callback json:{}",result);
 		//先直接截取 这个我们后面重构
-		this.openId = StringUtils.substringBetween("\"openid\":", "}");
+	//	this.openId = StringUtils.substringBetween("\"openid\":", "}");
+		this.openId = StringUtils.substringBetween(result,"\"openid\":\"", "\"}");
 	}
 
 
@@ -55,6 +56,8 @@ public class QQApiImpl extends AbstractOAuth2ApiBinding implements QQApi {
 		//  QQUserInfo userInfo= JSON.parseObject(userInfoResult,QQUserInfo.class);
 		log.info("qq userInfoResult json response:{}",userInfoResult);
 		QQUserInfo userInfo= JSON.parseObject(userInfoResult, new TypeReference<QQUserInfo >(){});
+		//返回的json中没有openId
+		userInfo.setOpenId(openId);
 		return userInfo;
 	}
 }

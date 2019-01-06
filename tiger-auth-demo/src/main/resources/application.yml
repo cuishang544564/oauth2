@@ -12,7 +12,8 @@ spring:
 
 # Tomcat
 server:
-  port: 8070
+  #port: 8070 qq回调端口要求80  也可以做接口转掉
+  port: 80
   connection-timeout: 5000ms
 
 #自定义权限配置
@@ -23,3 +24,11 @@ tiger:
         loginType: JSON
      imageCaptcha:
         interceptImageUrl: /user/*,/pay/confirm # 这些路径验证码也要拦截校验
+     social:
+        filterProcessesUrl: /auth
+        qq:
+          app-id: 101316278
+          app-secret: 34211e019a56566f7d44f4fe58380e69
+         # providerId: qq 默认就是
+         # http://www.ictgu.cn/login/qq qq互联申请的回调地址 101386962 2a0f820407df400b84a854d054be8b6a
+
