@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 import java.nio.charset.Charset;
 
 /**
+ *
  * @author CaiRui
  * @Date 2019-01-06 14:55
  */

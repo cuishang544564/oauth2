@@ -28,6 +28,7 @@ public class AbstractChannelSecurityConfig extends WebSecurityConfigurerAdapter 
 		http.formLogin()
 				.loginPage(SecurityConstants.DEFAULT_UNAUTHENTICATION_URL)
 				.loginProcessingUrl(SecurityConstants.DEFAULT_LOGIN_PROCESSING_URL_FORM)//
+				.defaultSuccessUrl("/index.html")
 				.successHandler(tigerAuthenticationSuccessHandler)
 				.failureHandler(tigerAuthenticationFailureHandler);
 	}

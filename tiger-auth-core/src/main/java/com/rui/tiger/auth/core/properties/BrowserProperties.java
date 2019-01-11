@@ -19,6 +19,12 @@ public class BrowserProperties {
 	private LoginTypeEnum loginType = LoginTypeEnum.JSON;
 
 	/**
+	 * 注册页面
+	 */
+	private String signupUrl="/tiger-signup.html";
+
+
+	/**
 	 * 记住我秒数
 	 * @return
 	 */
@@ -46,5 +52,13 @@ public class BrowserProperties {
 
 	public void setRemberMeSeconds(int remberMeSeconds) {
 		this.remberMeSeconds = remberMeSeconds;
+	}
+
+	public String getSignupUrl() {
+		return signupUrl;
+	}
+
+	public void setSignupUrl(String signupUrl) {
+		this.signupUrl = signupUrl;
 	}
 }

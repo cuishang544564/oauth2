@@ -9,8 +9,10 @@ import org.springframework.social.UserIdSource;
 import org.springframework.social.config.annotation.EnableSocial;
 import org.springframework.social.config.annotation.SocialConfigurerAdapter;
 import org.springframework.social.connect.ConnectionFactoryLocator;
+import org.springframework.social.connect.ConnectionSignUp;
 import org.springframework.social.connect.UsersConnectionRepository;
 import org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository;
+import org.springframework.social.connect.web.ProviderSignInUtils;
 import org.springframework.social.security.AuthenticationNameUserIdSource;
 import org.springframework.social.security.SpringSocialConfigurer;
 
@@ -30,6 +32,10 @@ public class SocialConfig extends SocialConfigurerAdapter {
     private DataSource dataSource;//数据源
     @Autowired
     private SecurityProperties securityProperties;
+    //第三方登录直接注册用户 可以不实现 跳到注册界面
+    @Autowired(required = false)
+    private ConnectionSignUp connectionSignUp;
+
 
     /**
      * 默认配置类  包括了过滤器SocialAuthenticationFilter 添加到security过滤链中
@@ -38,7 +44,10 @@ public class SocialConfig extends SocialConfigurerAdapter {
      */
     @Bean
     public SpringSocialConfigurer tigerSpringSocialConfigurer() {
-        TigerSpringSocialConfigurer tigerSpringSocialConfigurer = new TigerSpringSocialConfigurer(securityProperties.getSocial().getFilterProcessesUrl());
+        TigerSpringSocialConfigurer tigerSpringSocialConfigurer = new TigerSpringSocialConfigurer(
+                securityProperties.getSocial().getFilterProcessesUrl());
+        //配置自己的注册界面
+        tigerSpringSocialConfigurer.signupUrl(securityProperties.getBrowser().getSignupUrl());
         return tigerSpringSocialConfigurer;
     }
 
@@ -58,6 +67,9 @@ public class SocialConfig extends SocialConfigurerAdapter {
         JdbcUsersConnectionRepository jdbcUsersConnectionRepository = new JdbcUsersConnectionRepository(dataSource, connectionFactoryLocator, Encryptors.noOpText());
         //设定表UserConnection的前缀 表名不可以改变
         //jdbcUsersConnectionRepository.setTablePrefix("tiger_");
+        if(connectionSignUp!=null){
+            jdbcUsersConnectionRepository.setConnectionSignUp(connectionSignUp);
+        }
         return jdbcUsersConnectionRepository;
     }
 
@@ -70,6 +82,17 @@ public class SocialConfig extends SocialConfigurerAdapter {
     public UserIdSource getUserIdSource() {
         return new AuthenticationNameUserIdSource();
     }
+
+    /**
+     * social和注册互动工具类
+     * @return
+     */
+    @Bean
+    public ProviderSignInUtils providerSignInUtils(ConnectionFactoryLocator connectionFactoryLocator){
+        return new ProviderSignInUtils(connectionFactoryLocator,getUsersConnectionRepository(connectionFactoryLocator));
+    }
+
+
 
     //https://docs.spring.io/spring-social/docs/1.1.x-SNAPSHOT/reference/htmlsingle/#creating-connections-with-connectcontroller
     /*@Bean

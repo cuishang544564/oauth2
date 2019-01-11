@@ -94,7 +94,10 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 						SecurityConstants.DEFAULT_UNAUTHENTICATION_URL,//权限认证
 						SecurityConstants.DEFAULT_LOGIN_PROCESSING_URL_MOBILE,//手机
 						securityProperties.getBrowser().getLoginPage(),//登录页面
-						SecurityConstants.DEFAULT_VALIDATE_CODE_URL_PREFIX+"/*")// /captcha/* 验证码放行
+						SecurityConstants.DEFAULT_VALIDATE_CODE_URL_PREFIX+"/*",//  /captcha/* 验证码放行
+						securityProperties.getBrowser().getSignupUrl(),
+						"/user/regist",//这个第三方自定义权限 后续抽离出去 可配置
+						"/index.html")
 				.permitAll()
 				.anyRequest()
 				.authenticated()
