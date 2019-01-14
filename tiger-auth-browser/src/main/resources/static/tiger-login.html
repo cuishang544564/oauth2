@@ -54,13 +54,18 @@
     </table>
 </form>
 
-<h3>社交登录</h3>
-<!--不支持get请求  /auth/qq 默认是这个请求 /login/qq -->
+<!--<h3>社交登录</h3>
+&lt;!&ndash;不支持get请求  /auth/qq 默认是这个请求 /login/qq &ndash;&gt;
 <form action="/auth/qq" method="post">
     <button type="submit">QQ登录</button>
-</form>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/qqLogin/weixin">微信登录</a>
+</form>-->
 
-
+<h3>社交登录</h3>
+<a href="/auth/qq">QQ登录</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/auth/wechat">微信登录</a>
 
 </body>
 </html>
