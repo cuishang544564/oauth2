@@ -107,10 +107,14 @@ public class WechatOAuth2Template extends OAuth2Template {
 
     /**
      * 构建获取授权码的请求。也就是引导用户跳转到微信的地址。
+     * https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419316505&token=&lang=zh_CN
      */
     public String buildAuthenticateUrl(OAuth2Parameters parameters) {
         String url = super.buildAuthenticateUrl(parameters);
-        url = url + "&appid="+clientId+"&scope=snsapi_login";
+        url=url.replace("client_id","appid");
+        //url = url + "&appid="+clientId+"&scope=snsapi_login";
+        url = url + "&scope=snsapi_login";
+        log.info("微信获取授权码地址url:"+url);
         return url;
     }
 

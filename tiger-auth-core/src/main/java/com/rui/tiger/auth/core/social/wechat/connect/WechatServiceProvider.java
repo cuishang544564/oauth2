@@ -13,6 +13,13 @@ public class WechatServiceProvider extends AbstractOAuth2ServiceProvider<WechatA
 
     /**
      * 微信获取授权码的url
+     *
+     * https://open.weixin.qq.com/connect/qrconnect?
+     * appid=APPID&
+     * redirect_uri=REDIRECT_URI&
+     * response_type=code&
+     * scope=SCOPE&
+     * state=STATE#wechat_redirect
      */
     private static final String URL_AUTHORIZE = "https://open.weixin.qq.com/connect/qrconnect";
     /**

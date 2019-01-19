@@ -27,9 +27,10 @@ tiger:
         interceptImageUrl: /user/*,/pay/confirm # 这些路径验证码也要拦截校验
      social:
         filterProcessesUrl: /auth
+        #filterProcessesUrl: /qqLogin
         qq:
-          app-id: *
-          app-secret: *
+          app-id: ***
+          app-secret: ***
         wechat:
           app-id: wxd99431bbff8305a0
           app-secret: 60f78681d063590a469f1b297feff3c4
