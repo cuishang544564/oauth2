@@ -35,7 +35,7 @@ public class UserController {
 	 *
 	 * @return
 	 */
-	@GetMapping("authentication")
+	@GetMapping("me")
 	public Authentication getCurrentAuthentication() {
 		return SecurityContextHolder.getContext().getAuthentication();
 	}
@@ -47,7 +47,7 @@ public class UserController {
 	 * @param authentication
 	 * @return
 	 */
-	@GetMapping("authentication/auto")
+	@GetMapping("me/auto")
 	public Authentication getCurrentAuthentication2(Authentication authentication) {
 		return authentication;
 	}

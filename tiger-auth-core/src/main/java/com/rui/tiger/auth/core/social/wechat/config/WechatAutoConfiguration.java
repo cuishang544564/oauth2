@@ -15,13 +15,13 @@ import org.springframework.social.connect.UsersConnectionRepository;
 
 /**
  * 微信登陆配置
- * @author CaiRui
+ * @author CaiRui   extends SocialConfigurerAdapter
  * @Date 2019-01-12 13:57
  */
-@Configuration
-@ConditionalOnProperty(prefix = "tiger.auth.social.wechat", name = "app-id")
+//@Configuration
+//@ConditionalOnProperty(prefix = "tiger.auth.social.wechat", name = "app-id")
 public class WechatAutoConfiguration extends SocialConfigurerAdapter {
-    @Autowired
+ /*   @Autowired
     private SecurityProperties securityProperties;
 
     @Override
@@ -44,6 +44,6 @@ public class WechatAutoConfiguration extends SocialConfigurerAdapter {
     @Override
     public UsersConnectionRepository getUsersConnectionRepository(ConnectionFactoryLocator connectionFactoryLocator) {
         return null;
-    }
+    }*/
 
 }
