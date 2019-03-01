@@ -8,13 +8,25 @@ spring:
     # 配置Druid连接池
     type: com.alibaba.druid.pool.DruidDataSource
   session:
-    store-type: none
+    store-type: redis
+    # 单位秒 默认最短一分钟 默认半小时
+    timeout: 300
+  redis:
+    host: my.yunout.com
+    port: 6379
+    password: kruiredis0130
+    database: 0
+
+
 
 # Tomcat
 server:
   #port: 8070 qq回调端口要求80  也可以做接口转掉
-  port: 80
+  port: 8070
   connection-timeout: 5000ms
+  #servlet:
+    #session:
+      #timeout: 300
 
 #自定义权限配置
 tiger:

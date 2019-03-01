@@ -74,6 +74,18 @@ public class BrowserRequireController {
 	}
 
 	/**
+	 * session失效
+	 * @return
+	 */
+	@GetMapping("/session/invalid")
+	@ResponseStatus(HttpStatus.UNAUTHORIZED)
+	public SimpleResponse sessionInvalid(){
+		String sessionInvalidTipMessage="session已失效请重新登录";
+		return new SimpleResponse(sessionInvalidTipMessage);
+
+	}
+
+	/**
 	 * 获取社交用户信息  用于注册界面显示用户信息
 	 *
 	 * @param request

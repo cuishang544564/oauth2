@@ -24,12 +24,34 @@
             <version>1.18.2</version>
         </dependency>
 
-        <!-- 浏览器端Session管理的重要依赖 -->
-        <dependency>
+        <!--
+        浏览器端Session管理的重要依赖
+        spring-session:1.3.3.RELEASE在高版本的spring boot autoconfig中已经不支持了
+        要引入
+        spring-session-data-redis
+        spring-session-core
+        -->
+        <!--<dependency>
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session</artifactId>
             <version>1.3.3.RELEASE</version>
+        </dependency>-->
+
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-redis</artifactId>
+        </dependency>-->
+
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
         </dependency>
+
+       <!-- <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-core</artifactId>
+        </dependency>-->
+
 
     </dependencies>
 

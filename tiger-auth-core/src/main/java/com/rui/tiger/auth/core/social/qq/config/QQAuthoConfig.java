@@ -2,9 +2,13 @@ package com.rui.tiger.auth.core.social.qq.config;
 
 import com.rui.tiger.auth.core.properties.QQProperties;
 import com.rui.tiger.auth.core.properties.SecurityProperties;
+import com.rui.tiger.auth.core.social.TigerConnectView;
+import com.rui.tiger.auth.core.social.TigerQQConnectView;
 import com.rui.tiger.auth.core.social.qq.connect.QQOAuth2ConnectionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.social.config.annotation.ConnectionFactoryConfigurer;
@@ -12,6 +16,7 @@ import org.springframework.social.config.annotation.SocialConfigurerAdapter;
 import org.springframework.social.connect.ConnectionFactory;
 import org.springframework.social.connect.ConnectionFactoryLocator;
 import org.springframework.social.connect.UsersConnectionRepository;
+import org.springframework.web.servlet.View;
 
 /**
  * qq社交自动配置类 （新老版本配置不一样）
@@ -39,6 +44,19 @@ public class QQAuthoConfig extends SocialConfigurerAdapter {
     private ConnectionFactory<?> createConnectionFactory() {
         QQProperties qq = securityProperties.getSocial().getQq();
         return new QQOAuth2ConnectionFactory(qq.getProviderId(), qq.getAppId(), qq.getAppSecret());
+    }
+
+
+    /**
+     * qq绑定解绑界面视图
+     * connect/wechatConnected:绑定
+     * connect/wechatConnect:解绑
+     * @return
+     */
+    @Bean({"connect/qqConnect", "connect/qqConnected"})
+    @ConditionalOnMissingBean(name = "qqConnectedView") //可以自定义实现覆盖此默认界面
+    public View qqConnectedView(){
+        return new TigerQQConnectView();
     }
 
     // 后补：做到处理注册逻辑的时候发现的一个bug：登录完成后，数据库没有数据，但是再次登录却不用注册了

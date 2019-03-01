@@ -23,12 +23,17 @@ public class BrowserProperties {
 	 */
 	private String signupUrl="/tiger-signup.html";
 
-
 	/**
 	 * 记住我秒数
 	 * @return
 	 */
     private int remberMeSeconds=3600;
+
+	/**
+	 * 浏览器session配置
+	 */
+	private SessionProperties session=new SessionProperties();
+
 
 	public String getLoginPage() {
 		return loginPage;
@@ -60,5 +65,13 @@ public class BrowserProperties {
 
 	public void setSignupUrl(String signupUrl) {
 		this.signupUrl = signupUrl;
+	}
+
+	public SessionProperties getSession() {
+		return session;
+	}
+
+	public void setSession(SessionProperties session) {
+		this.session = session;
 	}
 }

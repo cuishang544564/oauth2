@@ -45,7 +45,8 @@ public abstract class AbstractCaptchaProcessor<C extends CaptchaVo> implements C
 	public void validate(ServletWebRequest request, CaptchaTypeEnum captchaType) throws CaptchaException {
 
 		String sessionKey = getSessionKey(captchaType);
-		C captchaInSession = (C) sessionStrategy.getAttribute(request, sessionKey);
+		//redis图片存不进去报错 保存编码code
+		String  captchaInSession = (String) sessionStrategy.getAttribute(request, sessionKey);
 
 		String captchaInRequest;
 		try {
@@ -63,14 +64,14 @@ public abstract class AbstractCaptchaProcessor<C extends CaptchaVo> implements C
 			throw new CaptchaException(captchaType + "验证码不存在");
 		}
 
-		if (captchaInSession.isExpried()) {
+		/*if (captchaInSession.isExpried()) {
 			sessionStrategy.removeAttribute(request, sessionKey);
 			throw new CaptchaException(captchaType + "验证码已过期");
 		}
 
 		if (!StringUtils.equals(captchaInSession.getCode(), captchaInRequest)) {
 			throw new CaptchaException(captchaType + "验证码不匹配");
-		}
+		}*/
 		//验证成功清除缓存中的key
 		sessionStrategy.removeAttribute(request, sessionKey);
 	}
@@ -95,7 +96,7 @@ public abstract class AbstractCaptchaProcessor<C extends CaptchaVo> implements C
 	 * @param captcha
 	 */
 	private void save(ServletWebRequest request, C captcha) {
-		sessionStrategy.setAttribute(request, CAPTCHA_SESSION_KEY +getCondition().getCode(), captcha);
+		sessionStrategy.setAttribute(request, CAPTCHA_SESSION_KEY +getCondition().getCode(), captcha.getCode());
 	}
 
 

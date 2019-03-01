@@ -1,5 +1,6 @@
 package com.rui.tiger.auth.browser.config;
 
+import com.rui.tiger.auth.browser.session.TigerExpiredSessionStrategy;
 import com.rui.tiger.auth.core.config.AbstractChannelSecurityConfig;
 import com.rui.tiger.auth.core.config.CaptchaSecurityConfig;
 import com.rui.tiger.auth.core.config.SmsAuthenticationSecurityConfig;
@@ -14,6 +15,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+import org.springframework.security.web.session.InvalidSessionStrategy;
+import org.springframework.security.web.session.SessionInformationExpiredStrategy;
 import org.springframework.social.security.SpringSocialConfigurer;
 
 import javax.sql.DataSource;
@@ -39,6 +42,10 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 	private CaptchaSecurityConfig captchaSecurityConfig;//验证码配置
 	@Autowired
 	private SpringSocialConfigurer tigerSpringSocialConfigurer;
+	@Autowired
+	private SessionInformationExpiredStrategy sessionInformationExpiredStrategy;
+	@Autowired
+	private InvalidSessionStrategy invalidSessionStrategy;
 
 	/**
 	 * 密码加密解密
@@ -89,6 +96,13 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 				.tokenValiditySeconds(securityProperties.getBrowser().getRemberMeSeconds())
 				.userDetailsService(userDetailsService)
 					.and()
+				.sessionManagement()
+				.invalidSessionStrategy(invalidSessionStrategy)//session失效策略
+				.maximumSessions(securityProperties.getBrowser().getSession().getMaximumSessions())//最大session并发数
+				.maxSessionsPreventsLogin(securityProperties.getBrowser().getSession().isMaxSessionsPreventsLogin())//true达到并发数后阻止登录，false 踢掉之前的登录
+				.expiredSessionStrategy(sessionInformationExpiredStrategy)//并发策略
+				.and()
+					.and()
 				.authorizeRequests()
 				.antMatchers(
 						SecurityConstants.DEFAULT_UNAUTHENTICATION_URL,//权限认证
@@ -96,8 +110,10 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 						securityProperties.getBrowser().getLoginPage(),//登录页面
 						SecurityConstants.DEFAULT_VALIDATE_CODE_URL_PREFIX+"/*",//  /captcha/* 验证码放行
 						securityProperties.getBrowser().getSignupUrl(),
-						"/user/regist",//这个第三方自定义权限 后续抽离出去 可配置
-						"/index.html")
+						//这个第三方自定义权限 后续抽离出去 可配置
+						"/user/regist",
+						"/index.html",
+						securityProperties.getBrowser().getSession().getInvalidSessionUrl())
 				.permitAll()
 				.anyRequest()
 				.authenticated()

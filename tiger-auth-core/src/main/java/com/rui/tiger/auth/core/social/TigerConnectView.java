@@ -7,12 +7,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 /**
- * 社交账号绑定成功返回界面 要适配多个社交账号 放在配置中管理bean
+ *  微信wechat社交账号绑定、解绑 成功返回界面  放在配置中管理bean
  * getViewPath() + providerId + "Connected";// connect/wechat/Connected
  * @author CaiRui
  * @Date 2019-01-20 11:19
  */
 public class TigerConnectView extends AbstractView {
+
     @Override
     protected void renderMergedOutputModel(Map<String, Object> model, HttpServletRequest request, HttpServletResponse response) throws Exception {
         response.setContentType("text/html;charset=UTF-8");
