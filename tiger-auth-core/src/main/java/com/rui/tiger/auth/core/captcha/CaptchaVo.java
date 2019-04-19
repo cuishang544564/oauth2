@@ -3,6 +3,7 @@ package com.rui.tiger.auth.core.captcha;
 import lombok.Data;
 
 import java.awt.image.BufferedImage;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -12,7 +13,7 @@ import java.time.LocalDateTime;
  * @Date 2018/12/15 9:11
  */
 @Data
-public class CaptchaVo {
+public class CaptchaVo implements Serializable {
     /**
      * 验证码
      */

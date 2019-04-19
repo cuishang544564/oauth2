@@ -13,6 +13,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 import org.springframework.security.web.session.InvalidSessionStrategy;
@@ -46,16 +47,19 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 	private SessionInformationExpiredStrategy sessionInformationExpiredStrategy;
 	@Autowired
 	private InvalidSessionStrategy invalidSessionStrategy;
+	@Autowired
+	private LogoutSuccessHandler tigerLogoutSuccessHandler;
 
 	/**
 	 * 密码加密解密
+	 * 放到core公共配置中
 	 *
 	 * @return
-	 */
+	 *//*
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
-	}
+	}*/
 
 	/**
 	 * 记住我持久化数据源
@@ -102,7 +106,13 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 				.maxSessionsPreventsLogin(securityProperties.getBrowser().getSession().isMaxSessionsPreventsLogin())//true达到并发数后阻止登录，false 踢掉之前的登录
 				.expiredSessionStrategy(sessionInformationExpiredStrategy)//并发策略
 				.and()
-					.and()
+				.and()
+				.logout()
+				.logoutUrl("/loginOut") //默认logout
+				//.logoutSuccessUrl("") url和Handler只能配置一个
+				.logoutSuccessHandler(tigerLogoutSuccessHandler)
+				.deleteCookies("JSESSIONID")//清楚cook键值
+				.and()
 				.authorizeRequests()
 				.antMatchers(
 						SecurityConstants.DEFAULT_UNAUTHENTICATION_URL,//权限认证
@@ -111,6 +121,7 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 						SecurityConstants.DEFAULT_VALIDATE_CODE_URL_PREFIX+"/*",//  /captcha/* 验证码放行
 						securityProperties.getBrowser().getSignupUrl(),
 						//这个第三方自定义权限 后续抽离出去 可配置
+						securityProperties.getBrowser().getLoginOut(),
 						"/user/regist",
 						"/index.html",
 						securityProperties.getBrowser().getSession().getInvalidSessionUrl())

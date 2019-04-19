@@ -13,6 +13,12 @@ public class BrowserProperties {
 	 * 登录页面 不配置默认标准登录界面
 	 */
 	private String loginPage = "/tiger-login.html";
+
+	/**
+	 * 退出登录
+	 */
+	private String loginOut;
+
 	/**
 	 * 跳转类型 默认返回json数据
 	 */
@@ -73,5 +79,13 @@ public class BrowserProperties {
 
 	public void setSession(SessionProperties session) {
 		this.session = session;
+	}
+
+	public String getLoginOut() {
+		return loginOut;
+	}
+
+	public void setLoginOut(String loginOut) {
+		this.loginOut = loginOut;
 	}
 }

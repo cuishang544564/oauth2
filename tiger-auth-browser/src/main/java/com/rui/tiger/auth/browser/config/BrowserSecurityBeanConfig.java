@@ -1,5 +1,6 @@
 package com.rui.tiger.auth.browser.config;
 
+import com.rui.tiger.auth.browser.loginout.TigerLogoutSuccessHandler;
 import com.rui.tiger.auth.browser.session.TigerExpiredSessionStrategy;
 import com.rui.tiger.auth.browser.session.TigerInvalidSessionStrategy;
 import com.rui.tiger.auth.core.properties.SecurityProperties;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.security.web.session.InvalidSessionStrategy;
 import org.springframework.security.web.session.SessionInformationExpiredStrategy;
 
@@ -31,5 +33,12 @@ public class BrowserSecurityBeanConfig {
 	@ConditionalOnMissingBean(SessionInformationExpiredStrategy.class)
 	public SessionInformationExpiredStrategy sessionInformationExpiredStrategy(){
 		return new TigerExpiredSessionStrategy(securityProperties.getBrowser().getSession().getInvalidSessionUrl());
+	}
+
+	//退出
+	@Bean
+	@ConditionalOnMissingBean(LogoutSuccessHandler.class)
+	public LogoutSuccessHandler tigerLogoutSuccessHandler(){
+		return new TigerLogoutSuccessHandler(securityProperties);
 	}
 }
