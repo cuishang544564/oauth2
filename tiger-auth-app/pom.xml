@@ -19,6 +19,11 @@
             <artifactId>tiger-auth-core</artifactId>
             <version>${tiger.auth.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>1.8.9.RELEASE</version>
+        </dependency>
 
     </dependencies>
 
