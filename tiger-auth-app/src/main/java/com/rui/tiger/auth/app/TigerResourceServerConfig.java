@@ -30,6 +30,8 @@ public class TigerResourceServerConfig extends ResourceServerConfigurerAdapter{
     private SmsAuthenticationSecurityConfig smsAuthenticationSecurityConfig;//短信登陆配置
     @Autowired
     private SpringSocialConfigurer tigerSpringSocialConfigurer;
+    @Autowired
+    private CaptchaSecurityConfig captchaSecurityConfig;
 
     @Autowired
     private SecurityProperties securityProperties;
@@ -47,8 +49,8 @@ public class TigerResourceServerConfig extends ResourceServerConfigurerAdapter{
                 .failureHandler(tigerAuthenticationFailureHandler);
 
         http
-                /*.apply(captchaSecurityConfig) //图形验证码的有问题 先不处理
-                .and()*/
+                .apply(captchaSecurityConfig) //图形验证码的有问题 先不处理
+                .and()
                 .apply(smsAuthenticationSecurityConfig)
                 .and()
                 .apply(tigerSpringSocialConfigurer)

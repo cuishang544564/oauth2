@@ -17,12 +17,11 @@ import java.util.concurrent.TimeUnit;
  */
 @Component
 public class RedisCaptchaRepository implements CaptchaRepository {
-
     /**
      * @see RedisAutoConfiguration#redisTemplate(org.springframework.data.redis.connection.RedisConnectionFactory)
      */
     @Autowired
-    private RedisTemplate<Object,Object> redisTemplate;
+    private RedisTemplate redisTemplate;
     /** 验证码放入redis规则模式：CODE_{TYPE}_{DEVICEId} */
     private final static String CODE_KEY_PATTERN = "CODE_%s_%s";
 

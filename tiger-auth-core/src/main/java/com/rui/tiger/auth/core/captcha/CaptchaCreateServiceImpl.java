@@ -28,7 +28,7 @@ public class CaptchaCreateServiceImpl implements CaptchaCreateService {
             StrategyContainerImpl.getStrategy(CaptchaProcessor.class,captchaType)
                     .create(request);
         } catch (Exception e) {
-            log.info("");
+            log.info("验证码生成失败",e);
         }
     }
 }

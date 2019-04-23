@@ -13,7 +13,7 @@ public class SmsCaptchaProperties {
     /**
      * 过期秒数 默认3分钟
      */
-    private int expireSeconds=180;
+    private int expireSeconds=60*30;
 
     /**
      * 短信验证码拦截的路径 多个路径以,(逗号)进行分割

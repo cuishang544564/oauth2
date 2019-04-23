@@ -1,6 +1,7 @@
 package com.rui.tiger.auth.core.captcha;
 
 import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.connect.web.HttpSessionSessionStrategy;
 import org.springframework.social.connect.web.SessionStrategy;
 import org.springframework.web.bind.ServletRequestBindingException;
@@ -16,6 +17,9 @@ import java.io.IOException;
  * @Date 2018/12/15 18:21
  */
 public abstract class AbstractCaptchaProcessor<C extends CaptchaVo> implements CaptchaProcessor {
+
+	@Autowired
+	private CaptchaRepository captchaRepository;
 
 	private SessionStrategy sessionStrategy = new HttpSessionSessionStrategy();
 
@@ -43,10 +47,8 @@ public abstract class AbstractCaptchaProcessor<C extends CaptchaVo> implements C
 	 */
 	@Override
 	public void validate(ServletWebRequest request, CaptchaTypeEnum captchaType) throws CaptchaException {
-
-		String sessionKey = getSessionKey(captchaType);
-		CaptchaVo captchaInSession= (CaptchaVo) sessionStrategy.getAttribute(request, sessionKey);
-
+		//CaptchaVo captchaInSession= (CaptchaVo) sessionStrategy.getAttribute(request, sessionKey);
+		CaptchaVo captchaInSession= (CaptchaVo) captchaRepository.get(request, captchaType);
 		String captchaInRequest;
 		try {
 			captchaInRequest = ServletRequestUtils.getStringParameter(request.getRequest(),
@@ -64,15 +66,18 @@ public abstract class AbstractCaptchaProcessor<C extends CaptchaVo> implements C
 		}
 
 		if (captchaInSession.isExpried()) {
-			sessionStrategy.removeAttribute(request, sessionKey);
+			//sessionStrategy.removeAttribute(request, sessionKey);
+			captchaRepository.remove(request, captchaType);
 			throw new CaptchaException(captchaType + "验证码已过期");
 		}
 
 		if (!StringUtils.equals(captchaInSession.getCode(), captchaInRequest)) {
 			throw new CaptchaException(captchaType + "验证码不匹配");
 		}
+
 		//验证成功清除缓存中的key
-		sessionStrategy.removeAttribute(request, sessionKey);
+		//sessionStrategy.removeAttribute(request, sessionKey);
+		captchaRepository.remove(request, captchaType);
 	}
 
 	/**
@@ -97,7 +102,8 @@ public abstract class AbstractCaptchaProcessor<C extends CaptchaVo> implements C
 	private void save(ServletWebRequest request, C captcha) {
 		//redis不支持bufferImage序列化
 		CaptchaVo captchaVo=new CaptchaVo(captcha.getCode(),captcha.getExpireTime());
-		sessionStrategy.setAttribute(request, CAPTCHA_SESSION_KEY +getCondition().getCode(),captchaVo);
+		//sessionStrategy.setAttribute(request, CAPTCHA_SESSION_KEY +getCondition().getCode(),captchaVo);
+		captchaRepository.save(request, captchaVo, getCondition());
 	}
 
 
