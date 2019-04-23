@@ -1,5 +1,6 @@
 package com.rui.tiger.auth.app;
 
+import com.rui.tiger.auth.app.social.openid.OpenIdAuthenticationSecurityConfig;
 import com.rui.tiger.auth.core.config.CaptchaSecurityConfig;
 import com.rui.tiger.auth.core.config.SmsAuthenticationSecurityConfig;
 import com.rui.tiger.auth.core.properties.SecurityConstants;
@@ -29,6 +30,8 @@ public class TigerResourceServerConfig extends ResourceServerConfigurerAdapter{
     @Autowired
     private SmsAuthenticationSecurityConfig smsAuthenticationSecurityConfig;//短信登陆配置
     @Autowired
+    private OpenIdAuthenticationSecurityConfig openIdAuthenticationSecurityConfig;
+    @Autowired
     private SpringSocialConfigurer tigerSpringSocialConfigurer;
     @Autowired
     private CaptchaSecurityConfig captchaSecurityConfig;
@@ -54,6 +57,8 @@ public class TigerResourceServerConfig extends ResourceServerConfigurerAdapter{
                 .apply(smsAuthenticationSecurityConfig)
                 .and()
                 .apply(tigerSpringSocialConfigurer)
+                .and()
+                .apply(openIdAuthenticationSecurityConfig)
                 .and()
                 .authorizeRequests()
                 .antMatchers(
