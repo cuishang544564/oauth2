@@ -1,7 +1,6 @@
 package com.rui.tiger.auth.browser.config;
 
-import com.rui.tiger.auth.browser.session.TigerExpiredSessionStrategy;
-import com.rui.tiger.auth.core.config.AbstractChannelSecurityConfig;
+import com.rui.tiger.auth.core.authentication.AbstractChannelSecurityConfig;
 import com.rui.tiger.auth.core.config.CaptchaSecurityConfig;
 import com.rui.tiger.auth.core.config.SmsAuthenticationSecurityConfig;
 import com.rui.tiger.auth.core.properties.SecurityConstants;
@@ -11,8 +10,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;

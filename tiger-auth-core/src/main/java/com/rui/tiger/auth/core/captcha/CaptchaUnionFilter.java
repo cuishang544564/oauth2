@@ -1,12 +1,12 @@
 package com.rui.tiger.auth.core.captcha;
 
-import com.rui.tiger.auth.core.authentication.TigerAuthenticationFailureHandler;
 import com.rui.tiger.auth.core.properties.SecurityConstants;
 import com.rui.tiger.auth.core.properties.SecurityProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.context.request.ServletWebRequest;
@@ -33,7 +33,7 @@ public class CaptchaUnionFilter extends OncePerRequestFilter implements Initiali
 	@Autowired
 	private SecurityProperties securityProperties;
 	@Autowired
-	private TigerAuthenticationFailureHandler tigerAuthenticationFailureHandler;
+	private AuthenticationFailureHandler tigerAuthenticationFailureHandler;
 	@Autowired
 	private CaptchaProcessorHolder captchaProcessorHolder;
 

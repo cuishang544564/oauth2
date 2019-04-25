@@ -1,4 +1,4 @@
-package com.rui.tiger.auth.core.config;
+package com.rui.tiger.auth.core.authentication;
 
 import com.rui.tiger.auth.core.properties.SecurityConstants;
 import org.springframework.beans.factory.annotation.Autowired;

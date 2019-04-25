@@ -13,14 +13,28 @@ public class TigerSpringSocialConfigurer extends SpringSocialConfigurer {
 
 	private String filterProcessesUrl;//覆盖默认的/auth 拦截路径
 
+	private SocialAuthenticationFilterPostProcessor socialAuthenticationFilterPostProcessor;
+
 	public TigerSpringSocialConfigurer(String filterProcessesUrl) {
 		this.filterProcessesUrl = filterProcessesUrl;
 	}
+
 
 	@Override
 	protected <T> T postProcess(T object) {
 		SocialAuthenticationFilter socialAuthenticationFilter = (SocialAuthenticationFilter) super.postProcess(object);
 		socialAuthenticationFilter.setFilterProcessesUrl(filterProcessesUrl);
+		if (socialAuthenticationFilterPostProcessor!=null){
+			socialAuthenticationFilterPostProcessor.process(socialAuthenticationFilter);
+		}
 		return (T) socialAuthenticationFilter;
+	}
+
+	public SocialAuthenticationFilterPostProcessor getSocialAuthenticationFilterPostProcessor() {
+		return socialAuthenticationFilterPostProcessor;
+	}
+
+	public void setSocialAuthenticationFilterPostProcessor(SocialAuthenticationFilterPostProcessor socialAuthenticationFilterPostProcessor) {
+		this.socialAuthenticationFilterPostProcessor = socialAuthenticationFilterPostProcessor;
 	}
 }

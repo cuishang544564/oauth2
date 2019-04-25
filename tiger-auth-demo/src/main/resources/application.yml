@@ -21,8 +21,8 @@ spring:
 
 # Tomcat
 server:
-  #port: 8070 qq回调端口要求80  也可以做接口转掉
-  port: 8060
+  #port: 8070 qq回调端口要求80  也可以做接口转掉 8060
+  port: 80
   connection-timeout: 5000ms
   #servlet:
     #session:
@@ -43,8 +43,8 @@ tiger:
         filterProcessesUrl: /auth
         #filterProcessesUrl: /qqLogin
         qq:
-          app-id: wxd99431bbff8305a0
-          app-secret: wxd99431bbff8305a0
+          app-id: 1013162782602
+          app-secret: 34211e019a56566f7d44f4fe58380e69
         wechat:
           app-id: wxd99431bbff8305a0
           app-secret: wxd99431bbff8305a0

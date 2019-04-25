@@ -37,6 +37,9 @@ public class SocialConfig extends SocialConfigurerAdapter {
     //第三方登录直接注册用户 可以不实现 跳到注册界面
     @Autowired(required = false)
     private ConnectionSignUp connectionSignUp;
+    //浏览器项目不用实现这个接口
+    @Autowired(required = false)
+    private SocialAuthenticationFilterPostProcessor socialAuthenticationFilterPostProcessor;
 
 
     /**
@@ -50,6 +53,7 @@ public class SocialConfig extends SocialConfigurerAdapter {
                 securityProperties.getSocial().getFilterProcessesUrl());
         //配置自己的注册界面
         tigerSpringSocialConfigurer.signupUrl(securityProperties.getBrowser().getSignupUrl());
+        tigerSpringSocialConfigurer.setSocialAuthenticationFilterPostProcessor(socialAuthenticationFilterPostProcessor);
         return tigerSpringSocialConfigurer;
     }
 

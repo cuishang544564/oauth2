@@ -1,8 +1,6 @@
-package com.rui.tiger.auth.core.authentication;
+package com.rui.tiger.auth.app.authentication;
 
-import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.rui.tiger.auth.core.model.enums.LoginTypeEnum;
 import com.rui.tiger.auth.core.properties.SecurityProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.MapUtils;
@@ -43,8 +41,10 @@ public class TigerAuthenticationSuccessHandler extends SavedRequestAwareAuthenti
 	 */
 	@Autowired
 	private ClientDetailsService clientDetailsService;
+
 	@Autowired
 	private AuthorizationServerTokenServices authorizationServerTokenServices;
+
 	@Autowired
 	private ObjectMapper objectMapper;
 
@@ -52,7 +52,7 @@ public class TigerAuthenticationSuccessHandler extends SavedRequestAwareAuthenti
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws ServletException, IOException {
 		log.info("登录成功");
 		/**
-		 * @see BasicAuthenticationFilter#doFilterInternal(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, javax.servlet.FilterChain)
+		 * @see BasicAuthenticationFilter#doFilterInternal(HttpServletRequest, HttpServletResponse, javax.servlet.FilterChain)
 		 *  */
 		String header = request.getHeader("Authorization");
 		if (header == null || !header.startsWith("Basic ")) {
@@ -71,7 +71,7 @@ public class TigerAuthenticationSuccessHandler extends SavedRequestAwareAuthenti
 		} else if (!StringUtils.equals(clientDetails.getClientSecret(), clientSecret)) {
 			throw new UnapprovedClientAuthenticationException("clientSecret不匹配:" + clientId);
 		}
-		/**  @see DefaultOAuth2RequestFactory#createTokenRequest(java.util.Map, org.springframework.security.oauth2.provider.ClientDetails)
+		/**  @see DefaultOAuth2RequestFactory#createTokenRequest(java.util.Map, ClientDetails)
 		 * requestParameters,不同的授权模式有不同的参数，这里自定义的模式，没有参数
 		 * String clientId,
 		 * Collection<String> scope, 给自己的前段使用，默认用所有的即可
@@ -80,7 +80,7 @@ public class TigerAuthenticationSuccessHandler extends SavedRequestAwareAuthenti
 		TokenRequest tokenRequest = new TokenRequest(MapUtils.EMPTY_SORTED_MAP, clientId, clientDetails.getScope(), "custom");
 		OAuth2Request oAuth2Request = tokenRequest.createOAuth2Request(clientDetails);
 		/**
-		 * @see org.springframework.security.oauth2.provider.token.AbstractTokenGranter#getOAuth2Authentication(org.springframework.security.oauth2.provider.ClientDetails, org.springframework.security.oauth2.provider.TokenRequest)
+		 * @see org.springframework.security.oauth2.provider.token.AbstractTokenGranter#getOAuth2Authentication(ClientDetails, TokenRequest)
 		 * */
 		OAuth2Authentication oAuth2Authentication = new OAuth2Authentication(oAuth2Request, authentication);
 		OAuth2AccessToken accessToken = authorizationServerTokenServices.createAccessToken(oAuth2Authentication);

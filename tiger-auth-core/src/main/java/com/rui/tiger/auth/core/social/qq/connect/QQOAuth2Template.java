@@ -1,5 +1,7 @@
 package com.rui.tiger.auth.core.social.qq.connect;
 
+import cn.hutool.core.date.DatePattern;
+import cn.hutool.core.date.DateUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.http.converter.StringHttpMessageConverter;
@@ -9,6 +11,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import java.nio.charset.Charset;
+import java.util.Date;
 
 /**
  *
@@ -40,9 +43,12 @@ public class QQOAuth2Template extends OAuth2Template{
     // 文档中说明：响应的是 access_token=FE04************************CCE2&expires_in=7776000&refresh_token=88E4************************BE14
     @Override
     protected AccessGrant postForAccessGrant(String accessTokenUrl, MultiValueMap<String, String> parameters) {
+        log.info("发送请求"+accessTokenUrl+":"+parameters.toString());
+        log.info("执行时间前:"+ DateUtil.format(new Date(),DatePattern.NORM_DATETIME_MS_PATTERN));
         String responseStr=getRestTemplate().postForObject(accessTokenUrl,parameters,String.class);
         log.info("获取accessToken响应:{}", responseStr);
-        String[] items = StringUtils.splitByWholeSeparatorPreserveAllTokens(responseStr, "&");
+        log.info("执行时间后:"+ DateUtil.format(new Date(),DatePattern.NORM_DATETIME_MS_PATTERN));
+         String[] items = StringUtils.splitByWholeSeparatorPreserveAllTokens(responseStr, "&");
         String accessToken = StringUtils.substringAfterLast(items[0], "=");
         String expiresIn = StringUtils.substringAfterLast(items[1], "=");
         String refreshToken = StringUtils.substringAfterLast(items[2], "=");
