@@ -6,11 +6,12 @@ import org.springframework.social.connect.ConnectionSignUp;
 import org.springframework.stereotype.Component;
 
 /**
- * 第三方应用登录 默认注册用户
+ * 第三方应用登录 默认注册用户 社交登录首次自动登录
+ *
  * @author CaiRui
  * @date 2019-01-10 18:20
  */
-@Component
+//@Component
 @Slf4j
 public class DemoConnectionSignUp implements ConnectionSignUp {
 

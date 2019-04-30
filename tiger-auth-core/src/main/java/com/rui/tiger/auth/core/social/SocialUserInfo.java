@@ -1,4 +1,4 @@
-package com.rui.tiger.auth.browser.support;
+package com.rui.tiger.auth.core.social;
 
 import lombok.Data;
 

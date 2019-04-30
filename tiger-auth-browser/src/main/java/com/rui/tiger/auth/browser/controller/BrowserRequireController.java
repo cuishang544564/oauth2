@@ -1,6 +1,6 @@
 package com.rui.tiger.auth.browser.controller;
 
-import com.rui.tiger.auth.browser.support.SocialUserInfo;
+import com.rui.tiger.auth.core.social.SocialUserInfo;
 import com.rui.tiger.auth.core.properties.SecurityProperties;
 import com.rui.tiger.auth.core.support.SimpleResponse;
 import lombok.extern.slf4j.Slf4j;

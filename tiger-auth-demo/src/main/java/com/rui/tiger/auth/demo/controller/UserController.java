@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.ServletWebRequest;
 
 /**
@@ -25,6 +26,9 @@ public class UserController {
 	@Autowired
 	private ProviderSignInUtils providerSignInUtils;
 
+	/*@Autowired
+	private AppSignUpUtils appSignUpUtils;
+*/
 	@RequestMapping("/hello")
 	public String hello() {
 		return "Hello,World";
@@ -63,7 +67,8 @@ public class UserController {
 		//这里处理绑定或注册用户逻辑
 
 		//进行系统用户和社交用户入库动作
-		providerSignInUtils.doPostSignUp(username,new ServletWebRequest(request));
+		//appSignUpUtils.doPostSignUp(username,new ServletWebRequest(request));
+		providerSignInUtils.doPostSignUp(username, new ServletWebRequest(request));
 	}
 
 

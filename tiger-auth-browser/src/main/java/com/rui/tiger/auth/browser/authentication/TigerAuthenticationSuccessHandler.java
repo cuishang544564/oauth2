@@ -5,9 +5,8 @@ import com.rui.tiger.auth.core.model.enums.LoginTypeEnum;
 import com.rui.tiger.auth.core.properties.SecurityProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
@@ -16,31 +15,28 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * 认证失败处理器
- *
+ * 认证成功处理器
  * @author CaiRui
- * @date 2019-04-24 10:59
+ * @date 2019-04-30 18:12
  */
-
-@Component("tigerAuthenticationFailureHandler")
+@Component("tigerAuthenticationSuccessHandler")
 @Slf4j
-public class TigerAuthenticationSuccessHandler extends SimpleUrlAuthenticationFailureHandler {
+public class TigerAuthenticationSuccessHandler  extends SavedRequestAwareAuthenticationSuccessHandler {
 
 	@Autowired
 	private SecurityProperties securityProperties;
 
 	@Override
-	public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
-		log.info("登录失败");
-		if (LoginTypeEnum.JSON.equals(securityProperties.getBrowser().getLoginType())) {
-			response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws ServletException, IOException {
+		log.info("登录成功");
+		if(LoginTypeEnum.JSON.equals(securityProperties.getBrowser().getLoginType())){
+			//返回json处理 默认也是json处理
 			response.setContentType("application/json;charset=UTF-8");
-			response.getWriter().write(JSON.toJSONString(exception));
+			log.info("认证信息:"+ JSON.toJSONString(authentication));
+			response.getWriter().write(JSON.toJSONString(authentication));
 		} else {
-			// 如果用户配置为跳转，则跳到Spring Boot默认的错误页面
-			super.onAuthenticationFailure(request, response, exception);
+			// 如果用户定义的是跳转，那么就使用父类方法进行跳转
+			super.onAuthenticationSuccess(request, response, authentication);
 		}
-
 	}
-
 }
