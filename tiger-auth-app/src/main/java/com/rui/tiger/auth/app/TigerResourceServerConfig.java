@@ -70,6 +70,7 @@ public class TigerResourceServerConfig extends ResourceServerConfigurerAdapter{
                         //这个第三方自定义权限 后续抽离出去 可配置
                         securityProperties.getBrowser().getLoginOut(),
                         "/user/regist",
+                        "/social/signUp",
                         "/index.html",
                         securityProperties.getBrowser().getSession().getInvalidSessionUrl())
                 .permitAll()

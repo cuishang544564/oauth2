@@ -52,13 +52,23 @@ tiger:
           app-secret: wxd99431bbff8305a0
           # providerId: qq 默认就是
           # http://www.ictgu.cn/login/qq qq互联申请的回调地址 101386962 2a0f820407df400b84a854d054be8b6a
+     oauth2:
+        clients:
+          -
+             clientId: tigerauth
+             clientSecret: 123456
+             authorizedGrantTypes: ["refresh_token", "password"]
+             scopes: ["all", "read"]
+             redirectUris: ["http://example.com","localhost:80"]
+             accessTokenValiditySeconds: 7200
+          -
+             clientId: myid2
+             clientSecret: myid2
+             authorizedGrantTypes: ["refresh_token", "password"]
+             scopes: ["all", "read", "write"]
+             redirectUris: ["http://example.com","localhost:80"]
+             accessTokenValiditySeconds: 7200
 
-security:
-  oauth2:
-    client:
-      client-id: tigerauth
-      client-secret: 123456
-      registered-redirect-uri: http://www.example.com
 
 
 

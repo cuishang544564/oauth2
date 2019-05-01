@@ -1,5 +1,6 @@
 package com.rui.tiger.auth.demo.controller;
 
+import com.rui.tiger.auth.app.social.AppSignUpUtils;
 import com.rui.tiger.auth.demo.vo.UserVo;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +24,12 @@ import org.springframework.web.context.request.ServletWebRequest;
 @RequestMapping("/user")
 public class UserController {
 
-	@Autowired
-	private ProviderSignInUtils providerSignInUtils;
-
 	/*@Autowired
+	private ProviderSignInUtils providerSignInUtils;*/
+
+	@Autowired
 	private AppSignUpUtils appSignUpUtils;
-*/
+
 	@RequestMapping("/hello")
 	public String hello() {
 		return "Hello,World";
@@ -61,14 +62,12 @@ public class UserController {
 	 */
 	@PostMapping("/regist")
 	public void regist(UserVo user, HttpServletRequest request){
-
 		 // 不管是注册用户还是绑定用户，都会拿到一个用户唯一标识
 		 String username=user.getUsername();
 		//这里处理绑定或注册用户逻辑
-
 		//进行系统用户和社交用户入库动作
-		//appSignUpUtils.doPostSignUp(username,new ServletWebRequest(request));
-		providerSignInUtils.doPostSignUp(username, new ServletWebRequest(request));
+		appSignUpUtils.doPostSignUp(username,new ServletWebRequest(request));
+		//providerSignInUtils.doPostSignUp(username, new ServletWebRequest(request));
 	}
 
 

@@ -32,6 +32,7 @@ public class AppSecurityController {
 	public SocialUserInfo getSocialUserInfo(HttpServletRequest request) {
 		SocialUserInfo userInfo = new SocialUserInfo();
 		Connection<?> connection = providerSignInUtils.getConnectionFromSession(new ServletWebRequest(request));
+
 		ConnectionData connectionData=connection.createData();
 		userInfo.setProviderId(connection.getKey().getProviderId());
 		userInfo.setProviderUserId(connection.getKey().getProviderUserId());
@@ -39,7 +40,6 @@ public class AppSecurityController {
 		userInfo.setHeadImg(connection.getImageUrl());
 
 		appSignUpUtils.saveConnectionData(new ServletWebRequest(request), connectionData);
-
 		return userInfo;
 	}
 

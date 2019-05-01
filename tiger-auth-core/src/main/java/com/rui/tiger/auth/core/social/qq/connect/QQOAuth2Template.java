@@ -56,7 +56,7 @@ public class QQOAuth2Template extends OAuth2Template{
         return accessGrant;
     }
 
-  /*  @Override
+   /* @Override
     protected AccessGrant postForAccessGrant(String accessTokenUrl, MultiValueMap<String, String> parameters) {
         AccessGrant accessGrant = new AccessGrant("", null, "", new Long(2));
         return accessGrant;

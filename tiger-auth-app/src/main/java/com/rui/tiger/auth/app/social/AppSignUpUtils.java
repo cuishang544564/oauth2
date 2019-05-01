@@ -64,7 +64,7 @@ public class AppSignUpUtils {
 		if (StringUtils.isBlank(deviceId)) {
 			throw new AppSecretException("设备id参数不能为空");
 		}
-		return "imooc:security:social.connect." + deviceId;
+		return "tiger:security:social.connect." + deviceId;
 	}
 
 }
