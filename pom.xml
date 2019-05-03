@@ -14,6 +14,7 @@
         <module>tiger-auth-app</module>
         <module>tiger-auth-browser</module>
         <module>tiger-auth-demo</module>
+        <module>tiger-sso</module>
     </modules>
 
     <properties>
