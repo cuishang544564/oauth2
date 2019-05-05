@@ -8,10 +8,15 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.rui.tiger</groupId>
     <artifactId>tiger-sso</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>sso-server</module>
+        <module>sso-client1</module>
+        <module>sso-client2</module>
     </modules>
 
 

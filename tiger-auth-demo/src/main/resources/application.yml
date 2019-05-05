@@ -45,7 +45,7 @@ tiger:
         filterProcessesUrl: /auth
         #filterProcessesUrl: /qqLogin
         qq:
-          app-id: 101316278
+          app-id: 1013162782602
           app-secret: 34211e019a56566f7d44f4fe58380e69
         wechat:
           app-id: wxd99431bbff8305a0
