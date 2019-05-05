@@ -24,7 +24,7 @@ spring:
 # Tomcat
 server:
   #port: 8070 qq回调端口要求80  也可以做接口转掉 8060
-  port: 80
+  port: 8060
   connection-timeout: 5000ms
   #servlet:
     #session:

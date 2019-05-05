@@ -1,6 +1,5 @@
 package com.rui.tiger.auth.demo.controller;
 
-import com.rui.tiger.auth.app.social.AppSignUpUtils;
 import com.rui.tiger.auth.core.properties.SecurityProperties;
 import com.rui.tiger.auth.demo.vo.UserVo;
 import io.jsonwebtoken.Claims;
@@ -12,10 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.social.connect.web.ProviderSignInUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.ServletWebRequest;
 
@@ -32,14 +28,14 @@ import java.io.UnsupportedEncodingException;
 @Slf4j
 public class UserController {
 
-	/*@Autowired
-	private ProviderSignInUtils providerSignInUtils;*/
+	@Autowired
+	private ProviderSignInUtils providerSignInUtils;
 
 	@Autowired
 	private SecurityProperties securityProperties;
 
-	@Autowired
-	private AppSignUpUtils appSignUpUtils;
+	/*@Autowired
+	private AppSignUpUtils appSignUpUtils;*/
 
 	@RequestMapping("/hello")
 	public String hello() {
@@ -55,6 +51,18 @@ public class UserController {
 	public Authentication getCurrentAuthentication() {
 		return SecurityContextHolder.getContext().getAuthentication();
 	}
+
+	/**
+	 * 获取用户认证信息
+	 *
+	 * @return
+	 */
+	@GetMapping("me/{userId}")
+	public Authentication getCurrentAuthentication(@PathVariable String userId) {
+		return SecurityContextHolder.getContext().getAuthentication();
+	}
+
+
 
 	/**
 	 * 获取用户认证信息
@@ -88,8 +96,8 @@ public class UserController {
 		 String username=user.getUsername();
 		//这里处理绑定或注册用户逻辑
 		//进行系统用户和社交用户入库动作
-		appSignUpUtils.doPostSignUp(username,new ServletWebRequest(request));
-		//providerSignInUtils.doPostSignUp(username, new ServletWebRequest(request));
+	//	appSignUpUtils.doPostSignUp(username,new ServletWebRequest(request));
+		providerSignInUtils.doPostSignUp(username, new ServletWebRequest(request));
 	}
 
 

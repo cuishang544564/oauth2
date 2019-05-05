@@ -8,6 +8,7 @@ import com.rui.tiger.auth.core.properties.SecurityProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
@@ -84,7 +85,6 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 		 * 表单密码配置
 		 */
 		applyPasswordAuthenticationConfig(http);
-
 		http
 				.apply(captchaSecurityConfig)
 					.and()
@@ -123,6 +123,10 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 						"/index.html",
 						securityProperties.getBrowser().getSession().getInvalidSessionUrl())
 				.permitAll()
+				//底层会拼接ROLE_ADMIN
+				.antMatchers("/user").hasRole("ADMIN")
+				//restful风格匹配
+				.antMatchers(HttpMethod.GET, "/user/*").hasRole("USER")
 				.anyRequest()
 				.authenticated()
 					.and()
