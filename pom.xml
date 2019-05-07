@@ -15,6 +15,7 @@
         <module>tiger-auth-browser</module>
         <module>tiger-auth-demo</module>
         <module>tiger-sso</module>
+        <module>tiger-auth-authorize</module>
     </modules>
 
     <properties>

@@ -1,6 +1,7 @@
 package com.rui.tiger.auth.browser.config;
 
 import com.rui.tiger.auth.core.authentication.AbstractChannelSecurityConfig;
+import com.rui.tiger.auth.core.authorize.AuthorizeConfigManager;
 import com.rui.tiger.auth.core.config.CaptchaSecurityConfig;
 import com.rui.tiger.auth.core.config.SmsAuthenticationSecurityConfig;
 import com.rui.tiger.auth.core.properties.SecurityConstants;
@@ -47,6 +48,8 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 	private InvalidSessionStrategy invalidSessionStrategy;
 	@Autowired
 	private LogoutSuccessHandler tigerLogoutSuccessHandler;
+	@Autowired
+	private AuthorizeConfigManager authorizeConfigManager;
 
 	/**
 	 * 密码加密解密
@@ -109,28 +112,10 @@ public class BrowserSecurityConfig extends AbstractChannelSecurityConfig {
 				//.logoutSuccessUrl("") url和Handler只能配置一个
 				.logoutSuccessHandler(tigerLogoutSuccessHandler)
 				.deleteCookies("JSESSIONID")//清楚cook键值
-				.and()
-				.authorizeRequests()
-				.antMatchers(
-						SecurityConstants.DEFAULT_UNAUTHENTICATION_URL,//权限认证
-						SecurityConstants.DEFAULT_LOGIN_PROCESSING_URL_MOBILE,//手机
-						securityProperties.getBrowser().getLoginPage(),//登录页面
-						SecurityConstants.DEFAULT_VALIDATE_CODE_URL_PREFIX+"/*",//  /captcha/* 验证码放行
-						securityProperties.getBrowser().getSignupUrl(),
-						//这个第三方自定义权限 后续抽离出去 可配置
-						securityProperties.getBrowser().getLoginOut(),
-						"/user/regist",
-						"/index.html",
-						securityProperties.getBrowser().getSession().getInvalidSessionUrl())
-				.permitAll()
-				//底层会拼接ROLE_ADMIN
-				.antMatchers("/user").hasRole("ADMIN")
-				//restful风格匹配
-				.antMatchers(HttpMethod.GET, "/user/*").hasRole("USER")
-				.anyRequest()
-				.authenticated()
 					.and()
 				.csrf().disable();
+		//配置管理
+		authorizeConfigManager.config(http.authorizeRequests());
 
 	}
 
