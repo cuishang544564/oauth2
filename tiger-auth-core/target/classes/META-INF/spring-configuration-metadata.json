@@ -1,0 +1,35 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.rui.tiger.auth.core.properties.SecurityProperties",
+      "name": "tiger.auth",
+      "type": "com.rui.tiger.auth.core.properties.SecurityProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.rui.tiger.auth.core.properties.SecurityProperties",
+      "name": "tiger.auth.browser",
+      "description": "浏览器配置类",
+      "type": "com.rui.tiger.auth.core.properties.BrowserProperties"
+    },
+    {
+      "sourceType": "com.rui.tiger.auth.core.properties.SecurityProperties",
+      "name": "tiger.auth.captcha",
+      "description": "验证码配置类",
+      "type": "com.rui.tiger.auth.core.properties.CaptchaProperties"
+    },
+    {
+      "sourceType": "com.rui.tiger.auth.core.properties.SecurityProperties",
+      "name": "tiger.auth.oauth2",
+      "type": "com.rui.tiger.auth.core.properties.OAuth2Properties"
+    },
+    {
+      "sourceType": "com.rui.tiger.auth.core.properties.SecurityProperties",
+      "name": "tiger.auth.social",
+      "description": "社交配置类",
+      "type": "com.rui.tiger.auth.core.properties.SocialProperties"
+    }
+  ]
+}

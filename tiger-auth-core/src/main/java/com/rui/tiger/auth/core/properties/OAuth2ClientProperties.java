@@ -12,7 +12,7 @@ public class OAuth2ClientProperties {
     private String[] redirectUris = {}; // 信任的回调域
     private String[] scopes = {};
     private int accessTokenValiditySeconds; // token有效期 默认单位秒
-
+    private Boolean isAutoApprove;
     public String getClientId() {
         return clientId;
     }
@@ -59,5 +59,13 @@ public class OAuth2ClientProperties {
 
     public void setAccessTokenValiditySeconds(int accessTokenValiditySeconds) {
         this.accessTokenValiditySeconds = accessTokenValiditySeconds;
+    }
+
+    public Boolean getAutoApprove() {
+        return isAutoApprove;
+    }
+
+    public void setAutoApprove(Boolean autoApprove) {
+        isAutoApprove = autoApprove;
     }
 }
