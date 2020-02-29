@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="authorizationServer" />
+        <module name="clientSample" />
+        <module name="resourceServer" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="authcommon" target="1.8" />
+      <module name="authcore" target="1.8" />
+      <module name="authdommain" target="1.8" />
+      <module name="auththirdredis" target="1.8" />
+      <module name="auththirdutils" target="1.8" />
+      <module name="serverprovider" target="1.8" />
+      <module name="serverproviderapp" target="1.8" />
+      <module name="serverproviderbrowser" target="1.8" />
+      <module name="serverprovidercore" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

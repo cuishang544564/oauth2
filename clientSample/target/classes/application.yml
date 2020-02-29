@@ -1,0 +1,22 @@
+auth-server: http://127.0.0.1:8060/ # 认证服务器地址
+server:
+  port: 8062
+security:
+  oauth2:
+    client:
+      client-id: imooc
+      client-secret: imooc
+      scope: all
+      access-token-uri: ${auth-server}/oauth/token
+      user-authorization-uri: ${auth-server}/oauth/authorize
+      clientAuthenticationScheme: form
+      registered-redirect-uri: http://localhost:8062/auth/account
+    resource:
+      token-info-uri: ${auth-server}/oauth/check_token
+      userInfoUri: http://${auth-server}/user
+    sso:
+      login-path: /auth/account
+logging:
+  level:
+    root: info
+debug: true

@@ -1,0 +1,21 @@
+auth-server: http://127.0.0.1:8080 # 认证服务器地址
+server:
+  port: 8061
+security:
+  oauth2:
+    client:
+      client-id: pwd
+      client-secret: pwd
+    resource:
+      token-info-uri: ${auth-server}/oauth/check_token
+      userInfoUri: http://localhost:8080/user
+#      id: pwd
+#      service-id: pwd
+debug: true
+logging:
+  level:
+    org.springframework: debug
+    com.baomidou.mybatisplus: debug
+spring:
+  application:
+    name: pwd
