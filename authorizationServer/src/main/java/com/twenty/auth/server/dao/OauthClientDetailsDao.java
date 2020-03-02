@@ -1,10 +1,9 @@
 package com.twenty.auth.server.dao;
 
+import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.twenty.auth.server.domain.OauthClientDetailsEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Component;
 
-/**
- * Created by wangxiangyun on 2017/2/14.
- */
-public interface OauthClientDetailsDao  extends JpaRepository<OauthClientDetailsEntity,String>{
+@Component
+public interface OauthClientDetailsDao  extends BaseMapper<OauthClientDetailsEntity> {
 }

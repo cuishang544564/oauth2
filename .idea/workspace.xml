@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ec017d9-56e4-4a60-bfe8-0bd9ed106dbe" name="Default" comment="" />
+    <list default="true" id="6ec017d9-56e4-4a60-bfe8-0bd9ed106dbe" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/config/MybatisPlusConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/Perm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorizationServer/src/main/resources/mapper/UserDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authorizationServer/src/main/resources/mapper/commonMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizationServer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationServer/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/dao/OauthClientDetailsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/dao/OauthClientDetailsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/dao/UserEntityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/dao/UserEntityDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/OauthClientDetailsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/OauthClientDetailsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/ClientDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/ClientDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizationServer/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationServer/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizationServer/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizationServer/target/classes/com/twenty/auth/server/dao/OauthClientDetailsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationServer/target/classes/com/twenty/auth/server/dao/OauthClientDetailsDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizationServer/target/classes/com/twenty/auth/server/dao/UserEntityDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationServer/target/classes/com/twenty/auth/server/dao/UserEntityDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizationServer/target/classes/com/twenty/auth/server/domain/OauthClientDetailsEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationServer/target/classes/com/twenty/auth/server/domain/OauthClientDetailsEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizationServer/target/classes/com/twenty/auth/server/domain/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationServer/target/classes/com/twenty/auth/server/domain/UserEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizationServer/target/classes/com/twenty/auth/server/service/Impl/ClientDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationServer/target/classes/com/twenty/auth/server/service/Impl/ClientDetailsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizationServer/target/classes/com/twenty/auth/server/service/Impl/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationServer/target/classes/com/twenty/auth/server/service/Impl/UserDetailsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorizationServer/target/classes/com/twenty/auth/server/service/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/authorizationServer/target/classes/com/twenty/auth/server/service/Impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientSample/target/classes/com/twenty/client/ClientServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resourceServer/target/classes/com/twenty/resource/config/CustomResourceServerConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/resourceServer/target/classes/com/twenty/resource/config/CustomResourceServerConfiguration.class" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/authorizationServer/target/" />
@@ -31,102 +59,92 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AuthorizationServerConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/config/AuthorizationServerConfig.java">
+      <file leaf-file-name="Authority.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/Authority.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="109" column="42" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
+            <state relative-caret-position="73">
+              <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThreadLocalSecurityContextHolderStrategy.java" pinned="false" current-in-tab="false">
-        <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE-sources.jar!/org/springframework/security/core/context/ThreadLocalSecurityContextHolderStrategy.java">
+      <file leaf-file-name="GrantedAuthority.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/spring-security-core/5.0.7.RELEASE/spring-security-core-5.0.7.RELEASE-sources.jar!/org/springframework/security/core/GrantedAuthority.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="56" selection-start-line="56" selection-end-line="56" />
+            <state relative-caret-position="63">
+              <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResourceServerConfig.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/config/ResourceServerConfig.java">
+      <file leaf-file-name="ClientDetailsServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/ClientDetailsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="107" selection-start-line="106" selection-end-line="107" />
-              <folding>
-                <element signature="e#1438#1698#0" expanded="true" />
-                <element signature="e#1697#1698#0" expanded="true" />
-                <element signature="e#3964#4224#0" expanded="true" />
-                <element signature="e#4223#4224#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="44">
+              <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PasswordEncoder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/authorizationServer/src/test/java/com/twenty/test/PasswordEncoder.java">
+      <file leaf-file-name="TokenEndpoint.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.m2/repository/io/springfox/springfox-core/2.5.0/springfox-core-2.5.0-sources.jar!/springfox/documentation/service/TokenEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="13" column="52" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="52" />
+            <state relative-caret-position="44">
+              <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/Application.java">
+      <file leaf-file-name="UserDetailsServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/UserDetailsServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="99">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebSecurityConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/config/WebSecurityConfig.java">
+      <file leaf-file-name="DaoAuthenticationProvider.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/spring-security-core/5.0.7.RELEASE/spring-security-core-5.0.7.RELEASE-sources.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="52" column="17" lean-forward="true" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
-              <folding>
-                <element signature="e#1818#1819#0" expanded="true" />
-                <element signature="e#1840#1841#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="217">
+              <caret line="108" selection-start-line="108" selection-end-line="108" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/resources/application.properties">
+      <file leaf-file-name="AbstractUserDetailsAuthenticationProvider.java" pinned="false" current-in-tab="true">
+        <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/spring-security-core/5.0.7.RELEASE/spring-security-core-5.0.7.RELEASE-sources.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+            <state relative-caret-position="97">
+              <caret line="182" selection-start-line="182" selection-end-line="182" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PasswordEncoder.java" pinned="false" current-in-tab="false">
-        <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE-sources.jar!/org/springframework/security/crypto/password/PasswordEncoder.java">
+      <file leaf-file-name="TokenEndpoint.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/oauth/spring-security-oauth2/2.2.2.RELEASE/spring-security-oauth2-2.2.2.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/endpoint/TokenEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            <state relative-caret-position="199">
+              <caret line="131" selection-start-line="131" selection-end-line="131" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomResourceServerConfiguration.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resourceServer/src/main/java/com/twenty/resource/config/CustomResourceServerConfiguration.java">
+      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="45" column="125" selection-start-line="45" selection-start-column="125" selection-end-line="45" selection-end-column="125" />
+            <state relative-caret-position="100">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/authorizationServer/pom.xml">
+      <file leaf-file-name="SimpleGrantedAuthority.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/spring-security-core/5.0.7.RELEASE/spring-security-core-5.0.7.RELEASE-sources.jar!/org/springframework/security/core/authority/SimpleGrantedAuthority.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1382">
-              <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+            <state relative-caret-position="-7">
+              <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -146,16 +164,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>grant</find>
-      <find>utoApprove</find>
-      <find>clientDetailsService</find>
-      <find>configure(http</find>
-      <find>userDetailsService</find>
-      <find>/login</find>
-      <find>ClientDetailsServiceConfigurer</find>
-      <find>authorize&quot;</find>
-      <find>auth-server</find>
-      <find>userInfoUri</find>
       <find>oauth2-resource</find>
       <find>AbstractHttpConfigurer</find>
       <find>ExceptionHandlingConfigurer</find>
@@ -176,6 +184,16 @@
       <find>successfulAuthentication</find>
       <find>UsernamePasswordAuthenticationToken</find>
       <find>passwordEncoder</find>
+      <find>mybatis</find>
+      <find>jpa</find>
+      <find>findByUsername</find>
+      <find>selectExample</find>
+      <find>updateby</find>
+      <find>menu</find>
+      <find>userid</find>
+      <find>role</find>
+      <find>server_error</find>
+      <find>handleException</find>
     </findStrings>
     <replaceStrings>
       <replace>Boolean</replace>
@@ -184,25 +202,12 @@
       <dir>D:\ideaworkspace\oauth2\auth-core</dir>
     </dirStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/auth-third-utils/auth-third-redis/src/main/java/com/twenty/redis/config/CacheProvider.java" />
-        <option value="$PROJECT_DIR$/auth-third-utils/auth-third-redis/src/main/java/com/twenty/redis/config/CacheConfig.java" />
-        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/authorization/config/RateLimiterConfig.java" />
-        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/authorization/ratelimit/RateLimitUtils.java" />
-        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/authorization/ratelimit/RateLimitProvider.java" />
-        <option value="$PROJECT_DIR$/auth-core/src/main/resources/mapper/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/auth-core/src/main/java/com/twenty/core/service/impl/UserDetailsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/auth-core/src/main/java/com/twenty/core/service/impl/UserService.java" />
-        <option value="$PROJECT_DIR$/auth-core/src/main/java/com/twenty/core/service/BaseService.java" />
-        <option value="$PROJECT_DIR$/auth-core/src/main/java/com/twenty/core/service/UserService.java" />
-        <option value="$PROJECT_DIR$/auth-core/pom.xml" />
-        <option value="$PROJECT_DIR$/auth-core/src/main/java/com/twenty/core/service/impl/CurrentUserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/authorization/listener/BadCredentialsEventListener.java" />
-        <option value="$PROJECT_DIR$/auth-core/src/main/java/com/twenty/core/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/authorization/rest/UserController.java" />
-        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/authorization/rest/ClientController.java" />
         <option value="$PROJECT_DIR$/auth-dommain/src/main/java/com/twenty/dommain/entity/UserInfo.java" />
         <option value="$PROJECT_DIR$/auth-dommain/pom.xml" />
         <option value="$PROJECT_DIR$/auth-dommain/src/main/java/com/twenty/dommain/entity/ClientInfo.java" />
@@ -213,7 +218,6 @@
         <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/authorization/rest/BootGrantController.java" />
         <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/authorization/listener/ApplicationConfig.java" />
         <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/authorization/config/AuthorizationServerConfig.java" />
-        <option value="$PROJECT_DIR$/authorizationServer/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/authorization/rest/SessionController.java" />
         <option value="$PROJECT_DIR$/auth-dommain/src/main/java/com/twenty/dommain/entity/common/Result.java" />
         <option value="$PROJECT_DIR$/server-provider/pom.xml" />
@@ -221,7 +225,6 @@
         <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/authorization/config/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/resourceServer/pom.xml" />
         <option value="$PROJECT_DIR$/resourceServer/src/main/java/com/twenty/resource/ResourceServer.java" />
-        <option value="$PROJECT_DIR$/resourceServer/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/resourceServer/src/main/java/com/twenty/resource/config/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/resourceServer/src/main/java/com/twenty/resource/rest/UserRest.java" />
         <option value="$PROJECT_DIR$/authorizationServer/src/main/java/wang/controller/LoginController.java" />
@@ -230,14 +233,32 @@
         <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/wang/domain/OauthClientDetailsEntity.java" />
         <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/wang/domain/UserEntity.java" />
         <option value="$PROJECT_DIR$/authorizationServer/src/main/resources/application-dev.properties" />
-        <option value="$PROJECT_DIR$/authorizationServer/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/wang/config/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/wang/config/AuthorizationServerConfig.java" />
-        <option value="$PROJECT_DIR$/authorizationServer/pom.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/authorizationServer/src/test/java/com/twenty/test/PasswordEncoder.java" />
         <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/wang/config/ResourceServerConfig.java" />
         <option value="$PROJECT_DIR$/resourceServer/src/main/java/com/twenty/resource/config/CustomResourceServerConfiguration.java" />
+        <option value="$PROJECT_DIR$/authorizationServer/pom.xml" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/dao/OauthClientDetailsDao.java" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/config/MybatisPlusConfig.java" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/ClientDetailsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/resources/mapper/SysUserDao.xml" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/dao/UserEntityDao.java" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/UserEntity.java" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/OauthClientDetailsEntity.java" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/config/ResourceServerConfig.java" />
+        <option value="$PROJECT_DIR$/resourceServer/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/SysMenu.java" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/Role.java" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/Perm.java" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/Menu.java" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/resources/mapper/UserDao.xml" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/resources/mapper/commonMapper.xml" />
+        <option value="$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/UserDetailsServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -250,6 +271,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="localRepository" value="C:\Users\admin\.m2\repository" />
         <option name="userSettingsFile" value="C:\Users\admin\.m2\settings_zl.xml" />
       </MavenGeneralSettings>
     </option>
@@ -264,38 +286,29 @@
       <expand>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="auth-dommain" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="authorizationServer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="authorizationServer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="clientSample" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="clientSample" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="oauth2" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="oauth2" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="authorizationServer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="clientSample" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="clientSample" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="resourceServer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="resourceServer" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="oauth2" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
         </path>
       </expand>
@@ -305,20 +318,18 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="6" />
     <option name="y" value="3" />
-    <option name="width" value="1950" />
-    <option name="height" value="1100" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -369,101 +380,67 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="oauth2" type="b2602c69:ProjectViewProjectNode" />
               <item name="oauth2" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceServer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oauth2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oauth2" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oauth2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oauth2" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oauth2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="oauth2" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceServer" type="462c0819:PsiDirectoryNode" />
+              <item name="authorizationServer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="oauth2" type="b2602c69:ProjectViewProjectNode" />
               <item name="oauth2" type="462c0819:PsiDirectoryNode" />
-              <item name="resourceServer" type="462c0819:PsiDirectoryNode" />
+              <item name="authorizationServer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oauth2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="oauth2" type="462c0819:PsiDirectoryNode" />
+              <item name="authorizationServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="Impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oauth2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="oauth2" type="462c0819:PsiDirectoryNode" />
+              <item name="authorizationServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oauth2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="oauth2" type="462c0819:PsiDirectoryNode" />
+              <item name="authorizationServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="oauth2" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="oauth2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="oauth2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.security:spring-security-config:4.1.4.RELEASE" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="oauth2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.security:spring-security-config:4.1.4.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-security-config-4.1.4.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oauth2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.security:spring-security-config:4.1.4.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-security-config-4.1.4.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oauth2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.security:spring-security-config:4.1.4.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-security-config-4.1.4.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="annotation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oauth2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.security:spring-security-config:4.1.4.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-security-config-4.1.4.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="annotation" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="oauth2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.security:spring-security-config:4.1.4.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-security-config-4.1.4.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="annotation" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="configurers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -486,11 +463,13 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.twenty.auth.server.domain" />
       <recent name="com.twenty.resource.config" />
       <recent name="com.twenty.redis.config" />
       <recent name="com.twenty.authorization.listener" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ideaworkspace\oauth2\authorizationServer\src\main\resources\mapper" />
       <recent name="D:\ideaworkspace\oauth2\authorizationServer\src\main\resources" />
       <recent name="D:\ideaworkspace\oauth2\authorizationServer\src\main\java" />
     </key>
@@ -525,7 +504,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Application (1)">
+  <component name="RunManager" selected="Spring Boot.Application (2)">
     <configuration name="Application (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.twenty.auth.server.Application" />
       <module name="authorizationServer" />
@@ -583,6 +562,10 @@
       <module name="authorizationServer" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.wang.Application" />
     </configuration>
+    <configuration name="Application (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="authorizationServer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.twenty.auth.server.Application" />
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="authorizationServer" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="wang.Application" />
@@ -622,15 +605,16 @@
     <list>
       <item itemvalue="Spring Boot.Application" />
       <item itemvalue="Spring Boot.Application (1)" />
+      <item itemvalue="Spring Boot.Application (2)" />
       <item itemvalue="Application.Application (1)" />
       <item itemvalue="JUnit.PasswordEncoder.testEncode" />
       <item itemvalue="Spring Boot.ResourceServer" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.ResourceServer" />
         <item itemvalue="Application.Application (1)" />
         <item itemvalue="JUnit.PasswordEncoder.testEncode" />
-        <item itemvalue="Spring Boot.ResourceServer" />
       </list>
     </recent_temporary>
   </component>
@@ -661,8 +645,18 @@
       <workItem from="1582710970251" duration="570000" />
       <workItem from="1582817417676" duration="12343000" />
       <workItem from="1582900675648" duration="919000" />
-      <workItem from="1582901621365" duration="8184000" />
+      <workItem from="1582901621365" duration="11344000" />
+      <workItem from="1583069203234" duration="6209000" />
+      <workItem from="1583117854983" duration="15518000" />
     </task>
+    <task id="LOCAL-00001" summary="1">
+      <created>1582935712790</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582935712790</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -698,40 +692,39 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213898000" />
+    <option name="totallyTimeSpent" value="238785000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="6" y="3" width="1386" height="788" extended-state="0" />
     <layout>
       <window_info anchor="right" id="PlantUML" order="10" />
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="right" id="RestServices" order="11" weight="0.109897174" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="2" visible="true" weight="0.29727685" />
+      <window_info anchor="right" id="Maven Projects" order="2" weight="0.24357034" />
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="0" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="7" sideWeight="0.30769232" side_tool="true" visible="true" weight="0.24054463" />
+      <window_info id="Structure" order="7" sideWeight="0.3604651" side_tool="true" visible="true" weight="0.15535446" />
       <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="9" visible="true" weight="0.66013074" />
+      <window_info anchor="bottom" id="Debug" order="9" visible="true" weight="0.47480917" />
       <window_info anchor="bottom" id="TODO" order="12" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.32843137" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.32569557" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="bottom" id="Java Enterprise" order="3" weight="0.32843137" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.48202613" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.55482817" />
       <window_info anchor="bottom" id="Spring" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.6923077" visible="true" weight="0.24054463" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.21931261" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.6395349" visible="true" weight="0.15535446" />
       <window_info anchor="bottom" id="Problems" order="15" />
       <window_info anchor="right" id="Bean Validation" order="6" />
       <window_info id="Web" order="5" sideWeight="0.23826715" side_tool="true" weight="0.2673522" />
-      <window_info anchor="bottom" id="Find" order="7" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info id="Favorites" order="3" sideWeight="0.37381405" side_tool="true" weight="0.21658097" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -739,6 +732,7 @@
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="7" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -746,6 +740,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -974,7 +972,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/UserDetailsServiceImpl.java</url>
-          <line>22</line>
+          <line>26</line>
           <properties />
           <option name="timeStamp" value="143" />
         </line-breakpoint>
@@ -983,12 +981,6 @@
           <line>94</line>
           <properties />
           <option name="timeStamp" value="144" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE.jar!/org/springframework/security/core/context/ThreadLocalSecurityContextHolderStrategy.class</url>
-          <line>31</line>
-          <properties />
-          <option name="timeStamp" value="145" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-web/5.0.6.RELEASE/spring-security-web-5.0.6.RELEASE-sources.jar!/org/springframework/security/web/authentication/UsernamePasswordAuthenticationFilter.java</url>
@@ -1026,11 +1018,47 @@
           <properties />
           <option name="timeStamp" value="152" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/UserServiceImpl.java</url>
+          <line>21</line>
+          <properties />
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.m2/repository/org/springframework/security/oauth/spring-security-oauth2/2.0.12.RELEASE/spring-security-oauth2-2.0.12.RELEASE.jar!/org/springframework/security/oauth2/provider/token/RemoteTokenServices.class</url>
+          <line>78</line>
+          <properties />
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/UserDetailsServiceImpl.java</url>
+          <line>49</line>
+          <properties />
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.m2/repository/org/springframework/security/oauth/spring-security-oauth2/2.2.2.RELEASE/spring-security-oauth2-2.2.2.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/endpoint/TokenEndpoint.java</url>
+          <line>89</line>
+          <properties />
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.m2/repository/org/springframework/security/oauth/spring-security-oauth2/2.2.2.RELEASE/spring-security-oauth2-2.2.2.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/endpoint/TokenEndpoint.java</url>
+          <line>136</line>
+          <properties />
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.m2/repository/org/springframework/security/spring-security-core/5.0.7.RELEASE/spring-security-core-5.0.7.RELEASE-sources.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.java</url>
+          <line>165</line>
+          <properties />
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="153" />
+      <option name="time" value="160" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -1083,378 +1111,351 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/dao/OauthClientDetailsDao.java">
+    <entry file="jar://D:/App/apache/maven/repository/org/springframework/spring-web/5.0.7.RELEASE/spring-web-5.0.7.RELEASE-sources.jar!/org/springframework/http/HttpStatus.java" />
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/utils/ResultJson.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        <state relative-caret-position="110">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/dao/UserEntityDao.java">
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/config/ApiExceptionHandlerAdvice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        <state relative-caret-position="207">
+          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/Authority.java">
+    <entry file="jar://D:/App/apache/maven/repository/org/mybatis/mybatis-spring/1.3.2/mybatis-spring-1.3.2-sources.jar!/org/mybatis/spring/annotation/MapperScan.java" />
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/config/MybatisPlusConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="220">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE-sources.jar!/org/springframework/security/core/authority/SimpleGrantedAuthority.java" />
+    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE-sources.jar!/org/springframework/security/core/GrantedAuthority.java" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/com/baomidou/mybatis-plus-support/2.3.1/mybatis-plus-support-2.3.1-sources.jar!/com/baomidou/mybatisplus/annotations/TableName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/App/apache/maven/repository/com/baomidou/mybatis-plus-support/2.3.1/mybatis-plus-support-2.3.1.jar!/com/baomidou/mybatisplus/annotations/TableName.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/mybatis/mybatis/3.4.6/mybatis-3.4.6-sources.jar!/org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="108" selection-start-line="108" selection-end-line="108" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/OauthClientDetailsEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/UserEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/ClientDetailsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="75">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/resources/application-dev.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-config/5.0.6.RELEASE/spring-security-config-5.0.6.RELEASE-sources.jar!/org/springframework/security/config/annotation/web/configuration/WebSecurityConfigurerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="249" column="4" selection-start-line="249" selection-start-column="4" selection-end-line="251" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/App/apache/maven/repository/org/springframework/security/oauth/spring-security-oauth2/2.2.2.RELEASE/spring-security-oauth2-2.2.2.RELEASE.pom">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resourceServer/src/main/java/com/twenty/resource/ResourceServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-web/5.0.6.RELEASE/spring-security-web-5.0.6.RELEASE-sources.jar!/org/springframework/security/web/savedrequest/RequestCacheAwareFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-web/5.0.6.RELEASE/spring-security-web-5.0.6.RELEASE-sources.jar!/org/springframework/security/web/authentication/logout/LogoutFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE.jar!/org/springframework/security/core/context/SecurityContext.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE.jar!/org/springframework/security/core/context/SecurityContextHolder.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-          <folding>
-            <element signature="e#991#992#0" expanded="true" />
-            <element signature="e#1035#1036#0" expanded="true" />
-            <element signature="e#2196#2197#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/App/apache/maven/repository/org/springframework/boot/spring-boot-starter-web/2.0.3.RELEASE/spring-boot-starter-web-2.0.3.RELEASE.pom">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resourceServer/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1078">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE-sources.jar!/org/springframework/security/core/userdetails/UserDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1039">
-          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-web/5.0.6.RELEASE/spring-security-web-5.0.6.RELEASE-sources.jar!/org/springframework/security/web/context/SecurityContextPersistenceFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="120" selection-start-line="120" selection-end-line="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/spring-web/5.0.7.RELEASE/spring-web-5.0.7.RELEASE-sources.jar!/org/springframework/web/filter/RequestContextFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31.jar!/org/apache/catalina/core/ApplicationFilterChain.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/apache/tomcat/embed/tomcat-embed-core/8.5.31/tomcat-embed-core-8.5.31.jar!/org/apache/catalina/core/StandardWrapperValve.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="157" selection-start-line="157" selection-end-line="157" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE.jar!/org/springframework/security/core/context/ThreadLocalSecurityContextHolderStrategy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-config/5.0.6.RELEASE/spring-security-config-5.0.6.RELEASE-sources.jar!/org/springframework/security/config/http/SessionCreationPolicy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-web/5.0.6.RELEASE/spring-security-web-5.0.6.RELEASE-sources.jar!/org/springframework/security/web/servletapi/SecurityContextHolderAwareRequestFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="169" selection-start-line="169" selection-end-line="169" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE-sources.jar!/org/springframework/security/authentication/UsernamePasswordAuthenticationToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="75" column="26" lean-forward="true" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-web/5.0.6.RELEASE/spring-security-web-5.0.6.RELEASE-sources.jar!/org/springframework/security/web/FilterChainProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="333" selection-start-line="333" selection-end-line="333" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/4.1.4.RELEASE/spring-security-core-4.1.4.RELEASE.jar!/org/springframework/security/core/context/ThreadLocalSecurityContextHolderStrategy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE-sources.jar!/org/springframework/security/core/userdetails/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1477">
-          <caret line="107" column="11" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE-sources.jar!/org/springframework/security/authentication/ProviderManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-775">
-          <caret line="173" selection-start-line="173" selection-end-line="173" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-web/5.0.6.RELEASE/spring-security-web-5.0.6.RELEASE-sources.jar!/org/springframework/security/web/header/HeaderWriterFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-web/5.0.6.RELEASE/spring-security-web-5.0.6.RELEASE-sources.jar!/org/springframework/security/web/authentication/AnonymousAuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/spring-web/5.0.7.RELEASE/spring-web-5.0.7.RELEASE-sources.jar!/org/springframework/web/filter/OncePerRequestFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-web/5.0.6.RELEASE/spring-security-web-5.0.6.RELEASE-sources.jar!/org/springframework/security/web/authentication/AbstractAuthenticationProcessingFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="204" selection-start-line="204" selection-end-line="204" />
-          <folding>
-            <element signature="e#15260#15261#0" expanded="true" />
-            <element signature="e#15295#15296#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-web/5.0.6.RELEASE/spring-security-web-5.0.6.RELEASE-sources.jar!/org/springframework/security/web/authentication/UsernamePasswordAuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-          <folding>
-            <element signature="e#2594#2595#0" expanded="true" />
-            <element signature="e#2651#2652#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/UserDetailsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#1001#1012#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-604">
-          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE-sources.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="165" selection-start-line="165" selection-end-line="165" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE-sources.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authorizationServer/src/test/java/com/twenty/test/PasswordEncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="13" column="52" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/config/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="52" column="17" lean-forward="true" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
-          <folding>
-            <element signature="e#1818#1819#0" expanded="true" />
-            <element signature="e#1840#1841#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE-sources.jar!/org/springframework/security/crypto/password/PasswordEncoder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resourceServer/src/main/java/com/twenty/resource/config/CustomResourceServerConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="45" column="125" selection-start-line="45" selection-start-column="125" selection-end-line="45" selection-end-column="125" />
+          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/authorizationServer/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1382">
-          <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
+        <state relative-caret-position="183">
+          <caret line="62" column="21" lean-forward="true" selection-start-line="62" selection-start-column="21" selection-end-line="62" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/Application.java">
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/spring-security-core/5.0.7.RELEASE/spring-security-core-5.0.7.RELEASE.jar!/org/springframework/security/core/context/ThreadLocalSecurityContextHolderStrategy.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="28">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/resources/application.properties">
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/spring-security-core/5.0.7.RELEASE/spring-security-core-5.0.7.RELEASE.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="61" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/UserEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
-          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/config/AuthorizationServerConfig.java">
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/dao/UserEntityDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="109" column="42" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
+        <state relative-caret-position="440">
+          <caret line="27" column="34" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/App/apache/maven/repository/org/springframework/security/spring-security-core/5.0.6.RELEASE/spring-security-core-5.0.6.RELEASE-sources.jar!/org/springframework/security/core/context/ThreadLocalSecurityContextHolderStrategy.java">
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/dao/OauthClientDetailsDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="110">
+          <caret line="7" column="38" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/controller/ClientDetailsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-397">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/config/SwaggerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-253">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resourceServer/src/main/java/com/twenty/resource/config/CustomResourceServerConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="45" column="68" lean-forward="true" selection-start-line="45" selection-start-column="68" selection-end-line="45" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/config/ResourceServerConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="107" selection-start-line="106" selection-end-line="107" />
+        <state relative-caret-position="250">
+          <caret line="54" column="78" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resourceServer/src/main/java/com/twenty/resource/ResourceServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resourceServer/src/main/java/com/twenty/resource/rest/UserRest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resourceServer/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/oauth/spring-security-oauth2/2.0.12.RELEASE/spring-security-oauth2-2.0.12.RELEASE.jar!/org/springframework/security/oauth2/provider/token/RemoteTokenServices.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="78" column="41" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/IClientDetailsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/IUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/spring-security-core/5.0.7.RELEASE/spring-security-core-5.0.7.RELEASE.jar!/org/springframework/security/core/GrantedAuthority.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="63" column="31" lean-forward="true" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
           <folding>
-            <element signature="e#1438#1698#0" expanded="true" />
-            <element signature="e#1697#1698#0" expanded="true" />
-            <element signature="e#3964#4224#0" expanded="true" />
-            <element signature="e#4223#4224#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/Perm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/resources/mapper/UserDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/resources/mapper/commonMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="29" column="106" selection-start-line="29" selection-start-column="106" selection-end-line="29" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/spring-security-core/5.0.7.RELEASE/spring-security-core-5.0.7.RELEASE-sources.jar!/org/springframework/security/core/authority/SimpleGrantedAuthority.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/spring-security-core/5.0.7.RELEASE/spring-security-core-5.0.7.RELEASE-sources.jar!/org/springframework/security/authentication/jaas/JaasGrantedAuthority.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-215">
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/ClientDetailsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/io/springfox/springfox-core/2.5.0/springfox-core-2.5.0.jar!/springfox/documentation/service/TokenEndpoint.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/oauth/spring-security-oauth2/2.2.2.RELEASE/spring-security-oauth2-2.2.2.RELEASE.jar!/org/springframework/security/oauth2/provider/endpoint/TokenEndpoint.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/io/springfox/springfox-core/2.5.0/springfox-core-2.5.0-sources.jar!/springfox/documentation/service/TokenEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/spring-security-core/5.0.7.RELEASE/spring-security-core-5.0.7.RELEASE-sources.jar!/org/springframework/security/core/GrantedAuthority.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/spring-security-core/5.0.7.RELEASE/spring-security-core-5.0.7.RELEASE-sources.jar!/org/springframework/security/core/userdetails/UserDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/domain/Authority.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/oauth/spring-security-oauth2/2.2.2.RELEASE/spring-security-oauth2-2.2.2.RELEASE-sources.jar!/org/springframework/security/oauth2/provider/endpoint/TokenEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authorizationServer/src/main/java/com/twenty/auth/server/service/Impl/UserDetailsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/spring-security-core/5.0.7.RELEASE/spring-security-core-5.0.7.RELEASE-sources.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="108" selection-start-line="108" selection-end-line="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/springframework/security/spring-security-core/5.0.7.RELEASE/spring-security-core-5.0.7.RELEASE-sources.jar!/org/springframework/security/authentication/dao/AbstractUserDetailsAuthenticationProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="182" selection-start-line="182" selection-end-line="182" />
         </state>
       </provider>
     </entry>

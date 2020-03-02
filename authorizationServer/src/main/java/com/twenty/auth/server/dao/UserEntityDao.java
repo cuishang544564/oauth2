@@ -1,16 +1,29 @@
 package com.twenty.auth.server.dao;
 
+import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.twenty.auth.server.domain.UserEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Map;
 
 /**
- * Created by Administrator on 2017/2/11 0011.
+ * 
+ *
+ * @author cuishang
+ * @since 2020/2/29
  */
-public interface UserEntityDao extends JpaRepository<UserEntity,Integer> {
+@Component
+public interface UserEntityDao  extends BaseMapper<UserEntity> {
     /**
      * 匹配姓名得到用户
      * @param username
      * @return
      */
-    UserEntity findByUsername(String username);
+//    @Select("select * from user where username=#{username}")
+//    UserEntity findByUsername(String username);
+
+    List<UserEntity> selectExample(UserEntity userEntity);
 }

@@ -1,0 +1,21 @@
+debug: true
+logging:
+    level:
+        org.springframework: debug
+        com.baomidou: debug
+server:
+    port: 8080
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: Cs61206120!
+        url: jdbc:mysql://49.233.191.32:3306/oauth2?useUnicode=true&characterEncoding=gbk&zeroDateTimeBehavior=convertToNull
+        username: root
+    thymeleaf:
+        cache: false
+        prefix: classpath:/oauth2/
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  mapper-locations: classpath:mapper/*.xml

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.twenty.auth.server.dao.common">
+    <resultMap id="UserResultMap" type="com.twenty.auth.server.domain.UserEntity">
+        <id column="user_id" jdbcType="CHAR" property="userId" />
+        <result column="username" jdbcType="VARCHAR" property="username" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="age" jdbcType="INTEGER" property="age" />
+        <result column="mark" jdbcType="VARCHAR" property="mark" />
+        <collection property="roles" ofType="com.twenty.auth.server.domain.Role" column="userId" resultMap="RoleResultMap"/>
+    </resultMap>
+    <resultMap id="RoleResultMap" type="com.twenty.auth.server.domain.Role">
+        <id column="role_id" jdbcType="CHAR" property="roleId" />
+        <result column="org_id" jdbcType="CHAR" property="orgId" />
+        <result column="sys" jdbcType="BIT" property="sys" />
+        <result column="level" jdbcType="INTEGER" property="level" />
+        <result column="category" jdbcType="VARCHAR" property="category" />
+        <result column="check_all" jdbcType="BIT" property="checkAll" />
+        <result column="role_code" jdbcType="VARCHAR" property="roleCode" />
+        <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+        <result column="status" jdbcType="TINYINT" property="status" />
+        <result column="seq" jdbcType="INTEGER" property="seq" />
+        <result column="remark" jdbcType="VARCHAR" property="remark" />
+        <result column="pinyin" jdbcType="VARCHAR" property="pinyin" />
+        <!--<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />-->
+        <!--<result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />-->
+        <!--<result column="create_by" jdbcType="CHAR" property="createBy" />-->
+        <!--<result column="update_by" jdbcType="CHAR" property="updateBy" />-->
+        <result column="extra" jdbcType="VARCHAR" property="extra" />
+        <collection property="menus" ofType="com.twenty.auth.server.domain.Menu"  resultMap="MenuResultMap"/>
+    </resultMap>
+
+    <resultMap id="MenuResultMap" type="com.twenty.auth.server.domain.Menu">
+        <id column="menu_id" jdbcType="CHAR" property="menuId" />
+
+        <result column="menu_name" jdbcType="VARCHAR" property="menuName" />
+
+        <!--<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />-->
+        <!--<result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />-->
+        <!--<result column="create_by" jdbcType="CHAR" property="createBy" />-->
+        <!--<result column="update_by" jdbcType="CHAR" property="updateBy" />-->
+        <collection property="perms" resultMap="PermResultMap"/>
+    </resultMap>
+    <resultMap id="PermResultMap" type="com.twenty.auth.server.domain.Perm">
+        <id column="perm_id" jdbcType="CHAR" property="permId" />
+        <result column="perm_code" jdbcType="VARCHAR" property="permCode" />
+        <result column="perm_name" jdbcType="VARCHAR" property="permName" />
+        <!--<result column="menu_id" jdbcType="CHAR" property="menuId" />-->
+    </resultMap>
+</mapper>
